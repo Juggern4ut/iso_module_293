@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt} % Keine Einrückungen
+
+\title{Modul 293 - Aufgabenblatt 02}
+
+\author{von Lukas Meier}
+
+\date{Unterricht vom 09.12.2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Aufgaben}
+
+Die folgende Aufgaben dienen dazu, das Wissen über CSS zu festigen und erste eigene Styles anzuwenden. Bitte arbeiten Sie die Aufgaben der Reihe nach ab.
+
+\subsection{Einbinden von CSS}
+
+Öffnen Sie die Datei \texttt{index.html} aus der vorherigen Lektion. Erstellen Sie eine neue Datei \texttt{styles.css} im gleichen Ordner. Binden Sie diese Datei in den \texttt{head}-Bereich ihrer HTML-Datei ein.
+
+\subsection{Einfacher Stil}
+
+Fügen Sie der Datei \texttt{styles.css} eine Regel hinzu, die alle Paragrafen (\texttt{p}-Tags) blau färbt. Speichern Sie die Datei und laden Sie die HTML-Datei im Browser neu. Was beobachten Sie?
+
+\subsection{Klassenselektoren}
+
+Erstellen Sie im HTML-Body einen Paragrafen mit der Klasse \texttt{highlight}. Schreiben Sie in die CSS-Datei eine Regel, die alle Elemente mit dieser Klasse gelb hinterlegt. Testen Sie das Ergebnis im Browser.
+
+\subsection{ID-Selektoren}
+
+Erstellen Sie einen \texttt{h1}-Tag mit der ID \texttt{special-title}. Schreiben Sie eine CSS-Regel, die diesem Element eine Schriftgrösse von 36px und die Farbe rot zuweist. Was passiert, wenn es gleichzeitig eine allgemeine \texttt{h1}-Regel in der CSS-Datei gibt?
+
+\subsection{Box-Modell}
+
+Fügen Sie einem Paragrafen die Klasse \texttt{box} hinzu. Schreiben Sie eine CSS-Regel, die Folgendes definiert:
+\begin{itemize}
+    \item Breite: 300px
+    \item Padding: 20px
+    \item Border: 2px solid schwarz
+    \item Margin: 30px
+\end{itemize}
+Öffnen Sie die Seite im Browser und identifizieren Sie die einzelnen Bereiche des Box-Modells.
+
+\subsection{Hintergrund und Farbe}
+
+Erstellen Sie eine Regel, die das Hintergrundbild oder die Hintergrundfarbe der gesamten Seite ändert. Testen Sie sowohl Farbwerte als auch Farb-Codes (hexadezimal, rgb). Beobachten Sie den Effekt.
+
+\subsection{Inline vs. Extern}
+
+Erstellen Sie einen neuen Paragrafen und geben Sie ihm inline die Farbe grün mit dem \texttt{style}-Attribut. Was passiert, wenn gleichzeitig eine CSS-Regel in \texttt{styles.css} dieselbe Eigenschaft für diesen Paragrafen definiert? Welche Regel gewinnt?
+
+\subsection{Mehrere Eigenschaften}
+
+Erstellen Sie ein weiteres Element, z.B. ein \texttt{div} mit der Klasse \texttt{card}. Schreiben Sie CSS-Regeln, die mehrere Eigenschaften definieren, z.B.:
+\begin{itemize}
+    \item Hintergrundfarbe
+    \item Textfarbe
+    \item Padding
+    \item Border-Radius
+\end{itemize}
+Beobachten Sie das Ergebnis im Browser.
+
+\subsection{Kaskade und Spezifität}
+
+Fügen Sie dem \texttt{div.card} zusätzlich eine ID \texttt{main-card} hinzu. Erstellen Sie eine CSS-Regel für \texttt{\#main-card} und überschreiben Sie einige der bisherigen Eigenschaften. Welche Änderungen werden sichtbar? Begründen Sie dies mit dem Prinzip der Spezifität.
+
+\subsection{Bonus: Experimentieren}
+
+Experimentieren Sie mit weiteren CSS-Eigenschaften:
+\begin{itemize}
+    \item Schriftfamilie (\texttt{font-family})
+    \item Schriftstil (\texttt{font-style}, \texttt{font-weight})
+    \item Textausrichtung (\texttt{text-align})
+    \item Hover-Effekte (\texttt{:hover})
+\end{itemize}
+Dokumentieren Sie Ihre Beobachtungen und beschreiben Sie kurz, welche Effekte Sie erzeugen konnten.
+
+\end{document}
