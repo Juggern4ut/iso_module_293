@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Modul 293 - Lektion 03</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+      td {
+        font-size: 21px;
+      }
+
+      .inline-code {
+        font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono",
+          monospace;
+        display: inline-block;
+        background-color: #2d2d2d;
+        padding: 2px 4px;
+        border-radius: 2px;
+        font-size: 75%;
+      }
+
+      thead td {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Modulfolie -->
+        <section>
+          <h2>Modul 293</h2>
+          <hr />
+          <h3>Webauftritt erstellen und veröffentlichen</h3>
+          <img
+            style="width: 200px"
+            src="assets/img/web-icon.png"
+            alt="Web Icon"
+          />
+        </section>
+
+        <!-- Titelfolie -->
+        <section>
+          <h2>03 - CSS Layout Grundlagen</h2>
+          <hr />
+          <h3>Box-Modell & Inline / Block</h3>
+          <img
+            style="width: 200px"
+            src="assets/img/css_logo.png"
+            alt="CSS Logo"
+          />
+        </section>
+
+        <!-- Lernziele -->
+        <section>
+          <h2>Lernziele dieser Lektion</h2>
+          <ul>
+            <li>Verstehen, wie das CSS Box-Modell aufgebaut ist.</li>
+            <li>Unterschiede zwischen Inline- und Block-Elementen kennen.</li>
+            <li>Wissen, wie sich Box-Modell und Display-Typ auf das Layout auswirken.</li>
+          </ul>
+        </section>
+
+        <!-- Rueckblick -->
+        <section>
+          <h2>Rückblick</h2>
+          <ul>
+            <li>CSS bestimmt das Aussehen von HTML-Elementen.</li>
+            <li>Elemente werden über Selektoren angesprochen.</li>
+            <li>Jedes Element besitzt ein bestimmtes Layout-Verhalten.</li>
+          </ul>
+        </section>
+
+        <!-- Was ist das Box-Modell -->
+        <section>
+          <h2>Was ist das Box-Modell?</h2>
+          <ul>
+            <li>Jedes HTML-Element wird als rechteckige Box dargestellt.</li>
+            <li>Diese Box besteht aus mehreren Bereichen.</li>
+            <li>Das Box-Modell ist zentral für Layout und Abstände.</li>
+          </ul>
+        </section>
+
+        <!-- Box Modell Aufbau -->
+        <section>
+          <h2>Aufbau des Box-Modells</h2>
+          <ul>
+            <li><b>Content</b> – eigentlicher Inhalt (Text, Bild)</li>
+            <li><b>Padding</b> – Innenabstand</li>
+            <li><b>Border</b> – Rahmen</li>
+            <li><b>Margin</b> – Aussenabstand</li>
+          </ul>
+          <img
+            src="assets/img/box-model.webp"
+            alt="CSS Box Modell"
+            style="width: 400px; margin-top: 20px"
+          />
+        </section>
+
+        <!-- Box Modell Code -->
+        <section>
+          <h2>Box-Modell im Code</h2>
+          <pre>
+            <code class="hljs css" data-trim data-line-numbers>
+            .box {
+              width: 300px;
+              padding: 20px;
+              border: 2px solid black;
+              margin: 30px;
+            }
+            </code>
+          </pre>
+        </section>
+
+        <!-- Box Sizing 
+        <section>
+          <h2>box-sizing</h2>
+          <ul>
+            <li>Standardmässig wird Breite nur auf den Content angewendet.</li>
+            <li>Padding und Border werden hinzugezählt.</li>
+            <li>Mit <span class="inline-code">box-sizing: border-box;</span> ändert sich das Verhalten.</li>
+          </ul>
+          <pre>
+            <code class="hljs css" data-trim data-line-numbers>
+            * {
+              box-sizing: border-box;
+            }
+            </code>
+          </pre>
+        </section>-->
+
+        <!-- Display Eigenschaft -->
+        <section>
+          <h2>Die display-Eigenschaft</h2>
+          <ul>
+            <li>Bestimmt, wie ein Element im Layout dargestellt wird.</li>
+            <li>Die wichtigsten Werte:</li>
+            <ul>
+              <li><span class="inline-code">block</span></li>
+              <li><span class="inline-code">inline</span></li>
+              <li><span class="inline-code">inline-block</span></li>
+            </ul>
+          </ul>
+        </section>
+
+        <!-- Block Elemente -->
+        <section>
+          <h2>Block-Elemente</h2>
+          <ul>
+            <li>Nehmen die gesamte Breite ein.</li>
+            <li>Beginnen immer in einer neuen Zeile.</li>
+            <li>Breite, Höhe, Margin und Padding funktionieren vollständig.</li>
+          </ul>
+          <p>Beispiele:</p>
+          <p>
+            <span class="inline-code">div</span>,
+            <span class="inline-code">p</span>,
+            <span class="inline-code">section</span>,
+            <span class="inline-code">header</span>
+          </p>
+        </section>
+
+        <!-- Inline Elemente -->
+        <section>
+          <h2>Inline-Elemente</h2>
+          <ul>
+            <li>Belegen nur so viel Platz wie nötig.</li>
+            <li>Beginnen nicht in einer neuen Zeile.</li>
+            <li>Breite und Höhe können nicht gesetzt werden.</li>
+          </ul>
+          <p>Beispiele:</p>
+          <p>
+            <span class="inline-code">span</span>,
+            <span class="inline-code">a</span>,
+            <span class="inline-code">strong</span>,
+            <span class="inline-code">em</span>
+          </p>
+        </section>
+
+        <!-- Inline vs Block Vergleich -->
+        <section>
+          <h2>Inline vs Block</h2>
+          <table>
+            <thead>
+              <tr>
+                <td>Eigenschaft</td>
+                <td>Block</td>
+                <td>Inline</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Neue Zeile</td>
+                <td>Ja</td>
+                <td>Nein</td>
+              </tr>
+              <tr>
+                <td>Breite / Höhe</td>
+                <td>Ja</td>
+                <td>Nein</td>
+              </tr>
+              <tr>
+                <td>Margin / Padding</td>
+                <td>Ja</td>
+                <td>Eingeschränkt</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Inline Block -->
+        <section>
+          <h2>inline-block</h2>
+          <ul>
+            <li>Kombiniert Eigenschaften von Inline und Block.</li>
+            <li>Elemente bleiben in einer Zeile.</li>
+            <li>Breite, Höhe, Margin und Padding funktionieren.</li>
+          </ul>
+          <pre>
+            <code class="hljs css" data-trim data-line-numbers>
+            .button {
+              display: inline-block;
+              padding: 10px 20px;
+            }
+            </code>
+          </pre>
+        </section>
+
+        <!-- Display ändern -->
+        <section>
+          <h2>Display-Typ ändern</h2>
+          <p>Der Display-Typ eines Elements kann jederzeit mit CSS geändert werden.</p>
+          <pre>
+            <code class="hljs css" data-trim data-line-numbers>
+            a {
+              display: block;
+            }
+            </code>
+          </pre>
+        </section>
+
+        <!-- Typisches Problem -->
+        <section>
+          <h2>Typisches Layout-Problem</h2>
+          <p>Warum funktioniert <span class="inline-code">margin-top</span> bei Inline-Elementen nicht wie erwartet?</p>
+          <p class="fragment fade-up">
+            Weil Inline-Elemente nicht das volle Box-Modell verwenden.
+          </p>
+        </section>
+
+        <!-- tldr -->
+        <section>
+          <h2>tldr</h2>
+          <ul style="font-size: 30px;">
+            <li class="fragment fade-up">Jedes Element ist eine Box.</li>
+            <li class="fragment fade-up">Das Box-Modell besteht aus Content, Padding, Border und Margin.</li>
+            <li class="fragment fade-up">Block- und Inline-Elemente verhalten sich grundlegend unterschiedlich.</li>
+            <li class="fragment fade-up">display steuert das Layout-Verhalten.</li>
+            <li class="fragment fade-up">inline-block ist oft ein guter Kompromiss.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

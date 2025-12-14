@@ -1,0 +1,209 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt} % Keine Einrückungen
+
+\title{Modul 293 - Aufgabenblatt 03}
+
+\author{von Lukas Meier}
+
+\date{Unterricht vom 09.12.2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Aufgaben}
+
+In dieser Lektion vertiefen Sie Ihr Wissen über das CSS Box-Modell sowie das Layout-Verhalten von Inline- und Block-Elementen. Arbeiten Sie die folgenden Aufgaben der Reihe nach durch und beobachten Sie die Auswirkungen Ihrer Änderungen jeweils im Browser.
+
+\subsection{Vorbereitung}
+
+Öffnen Sie Ihr bestehendes Projekt aus den vorherigen Lektionen (index.html, contact.html sowie styles.css). Stellen Sie sicher, dass Ihre CSS-Datei korrekt im \texttt{head}-Bereich der HTML-Dateien eingebunden ist.
+
+\subsection{Ein einfaches Box-Element}
+
+Erstellen Sie in der Datei index.html unterhalb des Headers ein neues \texttt{div}-Element. Vergeben Sie diesem Element die Klasse \texttt{box}. Befüllen Sie das \texttt{div} mit einem kurzen Text Ihrer Wahl.
+
+Erstellen Sie in der Datei styles.css eine CSS-Regel für die Klasse \texttt{box} und definieren Sie folgende Eigenschaften:
+
+\begin{itemize}
+    \item Breite: 300px
+    \item Hintergrundfarbe: hellgrau
+\end{itemize}
+
+Laden Sie die Seite im Browser neu. Wie verhält sich das Element im Layout?
+
+\subsection{Padding und Border}
+
+Erweitern Sie die bestehende CSS-Regel der Klasse \texttt{box} um folgende Eigenschaften:
+
+\begin{itemize}
+    \item Padding: 20px
+    \item Border: 2px solid schwarz
+\end{itemize}
+
+Beobachten Sie, wie sich der Abstand zwischen Text und Rahmen verändert. Welche Rolle spielt das Padding?
+
+\subsection{Margin}
+
+Ergänzen Sie der \texttt{box}-Klasse nun noch eine Margin von 30px.
+
+Beobachten Sie den Abstand des Elements zu anderen Elementen auf der Seite. Beschreiben Sie den Unterschied zwischen Padding und Margin.
+
+\subsection{Gesamtgrösse der Box}
+
+Messen oder schätzen Sie die effektive Breite der Box im Browser. Ist diese grösser als 300px? Begründen Sie Ihre Beobachtung.
+
+\subsection{box-sizing}
+
+Ergänzen Sie in Ihrer CSS-Datei folgende Regel ganz oben:
+
+\begin{verbatim}
+* {
+  box-sizing: border-box;
+}
+\end{verbatim}
+
+Laden Sie die Seite neu. Was ändert sich an der Gesamtgrösse der Box? Erklären Sie den Unterschied zum vorherigen Verhalten.
+
+\subsection{Block-Elemente untersuchen}
+
+Erstellen Sie zwei weitere \texttt{div}-Elemente unterhalb der bestehenden Box, ebenfalls mit der Klasse \texttt{box}.
+
+Beobachten Sie:
+\begin{itemize}
+    \item Wie werden die Elemente untereinander angeordnet?
+    \item Welche Breite nehmen die Elemente ein?
+\end{itemize}
+
+Warum ist dieses Verhalten typisch für Block-Elemente?
+
+\subsection{Inline-Elemente}
+
+Erstellen Sie innerhalb eines Paragrafen ein \texttt{span}-Element und geben Sie diesem die Klasse \texttt{inline-test}. Schreiben Sie etwas Text in das \texttt{span}.
+
+Definieren Sie in der CSS-Datei folgende Eigenschaften für \texttt{.inline-test}:
+
+\begin{itemize}
+    \item Hintergrundfarbe: gelb
+    \item Breite: 200px
+    \item Margin-top: 30px
+\end{itemize}
+
+Welche dieser Eigenschaften haben einen sichtbaren Effekt? Welche nicht? Begründen Sie Ihre Beobachtung.
+
+\subsection{Inline zu Block ändern}
+
+Ändern Sie nun den Display-Typ des \texttt{span}-Elements auf \texttt{block}.
+
+\begin{verbatim}
+display: block;
+\end{verbatim}
+
+Was ändert sich am Verhalten des Elements? Welche CSS-Eigenschaften funktionieren nun wie erwartet?
+
+\subsection{inline-block}
+
+Setzen Sie den Display-Typ des \texttt{span}-Elements nun auf \texttt{inline-block}. Ergänzen Sie zusätzlich ein Padding von 10px.
+
+Vergleichen Sie das Verhalten mit \texttt{inline} und \texttt{block}. In welchen Situationen könnte \texttt{inline-block} sinnvoll sein?
+
+\subsection{Navigation untersuchen}
+
+Untersuchen Sie die Links in Ihrer Navigation (\texttt{a}-Tags). Handelt es sich dabei standardmässig um Inline- oder Block-Elemente?
+
+Ändern Sie den Display-Typ der Links auf \texttt{block}. Beobachten Sie den Effekt auf:
+\begin{itemize}
+    \item Klickfläche
+    \item Anordnung
+\end{itemize}
+
+\subsection{Layout-Debugging}
+
+Öffnen Sie die zur Verfügung gestellte HTML-Datei im Browser. Die Seite enthält mehrere absichtlich eingebaute Layout-Fehler. Ziel dieser Aufgabe ist es, diese Fehler zu erkennen, zu verstehen und zu beheben.
+
+\subsubsection{Navigation analysieren}
+
+Betrachten Sie die Navigation im oberen Bereich der Seite.
+
+\begin{itemize}
+    \item Wie verhalten sich die Links im Layout?
+    \item Wie gross ist die Klickfläche der einzelnen Links?
+\end{itemize}
+
+Warum ist dieses Verhalten typisch für den aktuellen Display-Typ der \texttt{a}-Tags?
+
+\subsubsection{Navigation verbessern}
+
+Passen Sie das CSS so an, dass:
+\begin{itemize}
+    \item jeder Link in einer eigenen Zeile dargestellt wird oder
+    \item die Klickfläche klar erkennbar und gross ist
+\end{itemize}
+
+Welcher Display-Typ eignet sich hierfür besonders gut?
+
+\subsubsection{Box-Modell untersuchen}
+
+Betrachten Sie die beiden Boxen im Hauptbereich der Seite.
+
+\begin{itemize}
+    \item Welche Breite haben die Boxen effektiv im Browser?
+    \item Entspricht diese Breite dem definierten Wert von 300px?
+\end{itemize}
+
+Begründen Sie Ihre Beobachtung anhand des CSS Box-Modells.
+
+\subsubsection{Box-Modell korrigieren}
+
+Passen Sie das CSS so an, dass die Gesamtbreite der Boxen tatsächlich 300px beträgt, inklusive Padding und Border.
+
+Welche CSS-Eigenschaft wird dafür benötigt?
+
+\subsubsection{Inline-Element analysieren}
+
+Betrachten Sie das hervorgehobene Wort im Paragrafen.
+
+\begin{itemize}
+    \item Welche CSS-Eigenschaften haben keinen sichtbaren Effekt?
+    \item Warum ist das bei diesem Element so?
+\end{itemize}
+
+Beziehen Sie sich dabei auf den Display-Typ des Elements.
+
+\subsubsection{Inline-Element korrigieren}
+
+Ändern Sie den Display-Typ des \texttt{span}-Elements so, dass:
+\begin{itemize}
+    \item Breite und Höhe angewendet werden
+    \item das Element weiterhin im Textfluss bleibt
+\end{itemize}
+
+Welcher Display-Wert eignet sich hierfür?
+
+\subsubsection{Reflexion}
+
+Beschreiben Sie in 2--3 Sätzen:
+\begin{itemize}
+    \item einen Fehler, den Sie gefunden haben
+    \item wie Sie diesen behoben haben
+    \item welche Regel oder welches Konzept dahinter steckt
+\end{itemize}
+
+\subsection{Bonus: Layout Experiment}
+
+Experimentieren Sie mit folgenden CSS-Eigenschaften:
+
+\begin{itemize}
+    \item Unterschiedliche Margin- und Padding-Werte
+    \item Display-Typen bei verschiedenen Elementen
+    \item Kombination von \texttt{width}, \texttt{height} und \texttt{display}
+\end{itemize}
+
+Notieren Sie sich mindestens zwei Beobachtungen, die Sie über das Layout-Verhalten von HTML-Elementen gemacht haben.
+
+\end{document}
