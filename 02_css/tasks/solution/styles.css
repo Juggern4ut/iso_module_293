@@ -1,0 +1,53 @@
+p {
+    color: blue;
+    color: #0000FF;
+    color: rgb(0, 0, 255);
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+#special-title {
+    font-size: 36px;
+    color: red;
+}
+
+h1 {
+    font-size: 10px;
+    color: blue;
+    letter-spacing: 10px;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #000;
+    margin: 30px;
+}
+
+body {
+    background-color: #BBFFCC;
+}
+
+.card {
+    background-color: #444;
+    color: #EEEEFF;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 500ms;
+}
+
+#main-card {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFDDDD;
+}
+
+.center{
+    text-align: center;
+}
+
+.card:hover {
+    background-color: #666;
+}
