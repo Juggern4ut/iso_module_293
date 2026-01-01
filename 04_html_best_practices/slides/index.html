@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Modul 293 - Lektion 04</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+      td {
+        font-size: 21px;
+      }
+
+      .inline-code {
+        font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono",
+          monospace;
+        display: inline-block;
+        background-color: #2d2d2d;
+        padding: 2px 4px;
+        border-radius: 2px;
+        font-size: 75%;
+      }
+
+      thead td {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Modulfolie -->
+        <section>
+          <h2>Modul 293</h2>
+          <hr />
+          <h3>Webauftritt erstellen und veroeffentlichen</h3>
+          <img
+            style="width: 200px"
+            src="assets/img/web-icon.png"
+            alt="Web Icon"
+          />
+        </section>
+
+        <!-- Titelfolie -->
+        <section>
+          <h2>04 - HTML Best Practices</h2>
+          <hr />
+          <h3>Sauber, lesbar und zukunftssicher</h3>
+        </section>
+
+        <!-- Lernziele -->
+        <section>
+          <h2>Lernziele dieser Lektion</h2>
+          <ul>
+            <li>Verstehen, warum sauberes HTML wichtig ist.</li>
+            <li>HTML-Code lesbar und strukturiert schreiben koennen.</li>
+            <li>Typische Anfaengerfehler vermeiden.</li>
+          </ul>
+        </section>
+
+        <!-- Was sind Best Practices -->
+        <section>
+          <h2>Was sind Best Practices?</h2>
+          <ul>
+            <li>Bewaehrte Vorgehensweisen aus der Praxis.</li>
+            <li>Erleichtern Zusammenarbeit und Wartung.</li>
+            <li>Machen Webseiten robuster und verstaendlicher.</li>
+          </ul>
+        </section>
+
+        <!-- HTML ist Struktur -->
+        <section>
+          <h2>HTML ist Struktur</h2>
+          <ul>
+            <li>HTML beschreibt den Inhalt, nicht das Aussehen.</li>
+            <li>Layout und Design gehoeren in CSS.</li>
+            <li>Verwenden Sie HTML-Tags nach ihrer Bedeutung.</li>
+          </ul>
+        </section>
+
+        <!-- Semantische Tags -->
+        <section>
+          <h2>Semantische HTML-Tags</h2>
+          <p>Semantische Tags beschreiben die Bedeutung des Inhalts.</p>
+          <p>Beispiele:</p>
+          <p>
+            <span class="inline-code">header</span>,
+            <span class="inline-code">nav</span>,
+            <span class="inline-code">main</span>,
+            <span class="inline-code">section</span>,
+            <span class="inline-code">footer</span>
+          </p>
+        </section>
+
+        <!-- Beispiel schlecht -->
+        <section>
+          <h2>Schlechtes Beispiel</h2>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<div>
+  <div>
+    <div>Meine Webseite</div>
+  </div>
+</div>
+</code>
+          </pre>
+        </section>
+
+        <!-- Beispiel gut -->
+        <section>
+          <h2>Besseres Beispiel</h2>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<header>
+  <h1>Meine Webseite</h1>
+</header>
+</code>
+          </pre>
+        </section>
+
+        <!-- Headings -->
+        <section>
+          <h2>Ueberschriften richtig verwenden</h2>
+          <ul>
+            <li><span class="inline-code">h1</span> nur einmal pro Seite.</li>
+            <li>Ueberschriften logisch verschachteln.</li>
+            <li>Nicht nach Groesse, sondern nach Bedeutung waehlen.</li>
+          </ul>
+        </section>
+
+        <!-- Headings Beispiel -->
+        <section>
+          <h2>Ueberschriften Beispiel</h2>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<h1>Webseite</h1>
+<h2>Produkte</h2>
+<h3>Produkt A</h3>
+</code>
+          </pre>
+        </section>
+
+        <!-- Alt Attribute -->
+        <section>
+          <h2>Bilder richtig einbinden</h2>
+          <ul>
+            <li>Jedes Bild benoetigt ein <span class="inline-code">alt</span>-Attribut.</li>
+            <li>Wichtig fuer Barrierefreiheit.</li>
+            <li>Wichtig fuer Suchmaschinen.</li>
+          </ul>
+        </section>
+
+        <!-- Alt Beispiel -->
+        <section>
+          <h2>Alt-Attribut Beispiel</h2>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<img src="hund.jpg" alt="Ein Hund im Garten" />
+</code>
+          </pre>
+        </section>
+
+        <!-- Links -->
+        <section>
+          <h2>Links sinnvoll beschriften</h2>
+          <ul>
+            <li>Linktexte sollen aussagekraeftig sein.</li>
+            <li>„Hier klicken“ vermeiden.</li>
+          </ul>
+        </section>
+
+        <!-- Link Beispiel -->
+        <section>
+          <h2>Link Beispiel</h2>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<a href="kontakt.html">Zur Kontaktseite</a>
+</code>
+          </pre>
+        </section>
+
+        <!-- Einrueckung -->
+        <section>
+          <h2>Saubere Einrueckung</h2>
+          <ul>
+            <li>Erhoeht die Lesbarkeit.</li>
+            <li>Macht Verschachtelungen sichtbar.</li>
+            <li>Wichtig fuer Teamarbeit.</li>
+          </ul>
+        </section>
+
+        <!-- Einrueckung Beispiel -->
+        <section>
+          <h2>Einrueckung Beispiel</h2>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<nav>
+  <ul>
+    <li>
+      <a href="#">Home</a>
+    </li>
+  </ul>
+</nav>
+</code>
+          </pre>
+        </section>
+
+        <!-- Keine Inline Styles -->
+        <section>
+          <h2>Keine Inline-Styles</h2>
+          <ul>
+            <li>HTML und CSS trennen.</li>
+            <li>Inline-Styles erschweren Wartung.</li>
+            <li>CSS gehoert in eine externe Datei.</li>
+          </ul>
+        </section>
+
+        <!-- Kommentare -->
+        <section>
+          <h2>Kommentare sinnvoll nutzen</h2>
+          <ul>
+            <li>Erklaeren Struktur oder Zweck.</li>
+            <li>Nicht offensichtliches kommentieren.</li>
+          </ul>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<!-- Hauptnavigation -->
+<nav>
+  ...
+</nav>
+</code>
+          </pre>
+        </section>
+
+        <!-- Doctype -->
+        <section>
+          <h2>DOCTYPE nicht vergessen</h2>
+          <ul>
+            <li>Definiert modernes HTML.</li>
+            <li>Verhindert unerwartetes Browserverhalten.</li>
+          </ul>
+          <pre>
+<code class="hljs html" data-trim data-line-numbers>
+<!DOCTYPE html>
+</code>
+          </pre>
+        </section>
+
+        <!-- tldr -->
+        <section>
+          <h2>tldr</h2>
+          <ul style="font-size: 30px;">
+            <li class="fragment fade-up">HTML beschreibt Struktur, nicht Design.</li>
+            <li class="fragment fade-up">Semantische Tags verwenden.</li>
+            <li class="fragment fade-up">Ueberschriften logisch aufbauen.</li>
+            <li class="fragment fade-up">Code sauber einruecken und lesbar halten.</li>
+            <li class="fragment fade-up">Best Practices sparen spaeter Zeit.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

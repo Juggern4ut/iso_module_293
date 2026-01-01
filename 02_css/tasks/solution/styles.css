@@ -11,6 +11,7 @@ p {
 #special-title {
     font-size: 36px;
     color: red;
+    font-weight: bold;
 }
 
 h1 {
@@ -35,7 +36,7 @@ body {
     color: #EEEEFF;
     padding: 20px;
     border-radius: 15px;
-    transition: 500ms;
+    transition: 5s;
 }
 
 #main-card {
