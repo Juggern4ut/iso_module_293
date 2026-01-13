@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+
+.box{
+    width: 300px;
+    background-color: #dedede;
+    padding: 20px;
+    border: 2px solid #000;
+    margin: 30px;
+}
+
+.inline-test{
+    background-color: #ffff00;
+    width: 200px;
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px;
+}

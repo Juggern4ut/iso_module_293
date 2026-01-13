@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Layout Debug Demo</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* Navigation */
+      nav a {
+        background-color: #444;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        text-decoration: none;
+      }
+
+      /* Boxen */
+      .box {
+        width: 300px;
+        padding: 20px;
+        border: 5px solid red;
+        margin: 20px;
+        background-color: #eee;
+      }
+
+      /* Inline Test */
+      .inline-test {
+        background-color: yellow;
+        width: 200px;
+        height: 100px;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Produkte</a>
+        <a href="#">Kontakt</a>
+      </nav>
+
+      <h1>Willkommen</h1>
+      <p>Dies ist eine Beispielseite mit Layout-Problemen.</p>
+    </header>
+
+    <main>
+      <div class="box">
+        Erste Box
+      </div>
+
+      <div class="box">
+        Zweite Box
+      </div>
+
+      <p>
+        Dies ist ein
+        <span class="inline-test">Inline-Element</span>
+        im Text.
+      </p>
+    </main>
+  </body>
+</html>
