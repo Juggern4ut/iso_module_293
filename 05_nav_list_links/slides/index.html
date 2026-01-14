@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Modul 293 - Lektion Listen, Navigation, Links</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+      td {
+        font-size: 21px;
+      }
+
+      .inline-code {
+        font-family: "Consolas", "Monaco", monospace;
+        background-color: #2d2d2d;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 80%;
+      }
+
+      thead td {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Titelfolie -->
+        <section>
+          <h2>Modul 293</h2>
+          <hr />
+          <h3>Listen, Navigation und Links</h3>
+          <p>Strukturierte Inhalte im Web</p>
+        </section>
+
+        <!-- Lernziele -->
+        <section>
+          <h2>Lernziele</h2>
+          <ul>
+            <li>Listen mit HTML korrekt erstellen</li>
+            <li>Unterschied zwischen ul und ol verstehen</li>
+            <li>Navigationen semantisch richtig umsetzen</li>
+            <li>Saubere und suchmaschinenfreundliche Links erstellen</li>
+          </ul>
+        </section>
+
+        <!-- Warum Listen -->
+        <section>
+          <h2>Warum Listen?</h2>
+          <ul>
+            <li>Strukturieren Inhalte</li>
+            <li>Verbessern die Lesbarkeit</li>
+            <li>Werden oft für Navigationen verwendet</li>
+            <li>Sind leicht mit CSS zu stylen</li>
+          </ul>
+        </section>
+
+        <!-- ul -->
+        <section>
+          <h2>Ungeordnete Liste (ul)</h2>
+          <p>
+            Eine ungeordnete Liste wird verwendet, wenn die Reihenfolge keine Rolle spielt.
+          </p>
+          <pre>
+            <code class="hljs html" data-trim>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+            </code>
+          </pre>
+        </section>
+
+        <!-- ol -->
+        <section>
+          <h2>Geordnete Liste (ol)</h2>
+          <p>
+            Eine geordnete Liste wird verwendet, wenn die Reihenfolge wichtig ist.
+          </p>
+          <pre>
+            <code class="hljs html" data-trim>
+                <ol>
+                  <li>Datei erstellen</li>
+                  <li>HTML schreiben</li>
+                  <li>Im Browser testen</li>
+                </ol>
+            </code>
+          </pre>
+        </section>
+
+        <!-- li -->
+        <section>
+          <h2>Listenelement (li)</h2>
+          <p>
+            Jedes Element innerhalb einer Liste wird mit dem Tag
+            <code class="inline-code">li</code> definiert.
+          </p>
+          <p>
+            <strong>li darf nur innerhalb von ul oder ol verwendet werden.</strong>
+          </p>
+        </section>
+
+        <!-- Verschachtelte Listen -->
+        <section>
+          <h2>Verschachtelte Listen</h2>
+          <p>Listen können ineinander verschachtelt werden.</p>
+          <pre>
+            <code class="hljs html" data-trim>
+                <ul>
+                  <li>Frontend
+                    <ul>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                    </ul>
+                  </li>
+                </ul>
+            </code>
+          </pre>
+        </section>
+
+        <!-- Navigation -->
+        <section>
+          <h2>Navigation im Web</h2>
+          <ul>
+            <li>Hilft Benutzern, sich zurechtzufinden</li>
+            <li>Ist auf fast jeder Webseite vorhanden</li>
+            <li>Sollte klar und einfach aufgebaut sein</li>
+          </ul>
+        </section>
+
+        <!-- nav -->
+        <section>
+          <h2>Das nav-Element</h2>
+          <p>
+            HTML bietet mit <code class="inline-code">nav</code> ein semantisches Element für Navigationen.
+          </p>
+          <ul>
+            <li>Verbessert Barrierefreiheit</li>
+            <li>Hilft Suchmaschinen</li>
+            <li>Macht den Code lesbarer</li>
+          </ul>
+        </section>
+
+        <!-- Navigation Struktur -->
+        <section>
+          <h2>Typische Navigationsstruktur</h2>
+          <pre>
+            <code class="hljs html" data-trim>
+                <nav>
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                  </ul>
+                </nav>
+            </code>
+          </pre>
+        </section>
+
+        <!-- Links -->
+        <section>
+          <h2>Links (a-Element)</h2>
+          <p>
+            Links verbinden Webseiten miteinander.
+          </p>
+          <ul>
+            <li>Interne Links</li>
+            <li>Externe Links</li>
+          </ul>
+        </section>
+
+        <!-- Interne vs Externe -->
+        <section>
+          <h2>Interne und externe Links</h2>
+          <ul>
+            <li><strong>Interne Links:</strong> eigene Dateien</li>
+            <li><strong>Externe Links:</strong> andere Webseiten</li>
+          </ul>
+        </section>
+
+        <!-- Best Practices -->
+        <section>
+          <h2>Best Practices für Linktexte</h2>
+          <ul>
+            <li>Linktexte sollen beschreibend sein</li>
+            <li>Keine generischen Begriffe verwenden</li>
+            <li>Linktext muss Sinn ergeben</li>
+          </ul>
+        </section>
+
+        <!-- SEO -->
+        <section>
+          <h2>Links und SEO</h2>
+          <ul>
+            <li>Suchmaschinen lesen Linktexte</li>
+            <li>Gute Struktur verbessert Auffindbarkeit</li>
+            <li>Navigation sollte logisch aufgebaut sein</li>
+          </ul>
+        </section>
+
+        <!-- target -->
+        <section>
+          <h2>target-Attribut</h2>
+          <p>
+            Das Attribut <code class="inline-code">target</code> bestimmt, wo ein Link geöffnet wird.
+          </p>
+          <pre>
+            <code class="hljs html" data-trim>
+                <a href="https://google.com" target="_blank">
+                  Google
+                </a>
+            </code>
+          </pre>
+        </section>
+
+        <!-- tldr -->
+        <section>
+          <h2>tldr</h2>
+          <ul>
+            <li class="fragment fade-up">Listen strukturieren Inhalte</li>
+            <li class="fragment fade-up">ul und ol haben unterschiedliche Zwecke</li>
+            <li class="fragment fade-up">Navigationen gehören in ein nav-Element</li>
+            <li class="fragment fade-up">Gute Linktexte helfen Benutzern und Suchmaschinen</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

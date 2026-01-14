@@ -1,0 +1,143 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 04}
+\author{von Lukas Meier}
+\date{Unterricht vom \today}
+
+\begin{document}
+
+\maketitle
+
+\section{Aufgaben}
+
+In dieser Lektion haben Sie gelernt, wie Listen, Navigationen und Links in HTML korrekt umgesetzt werden.  
+Ziel dieses Aufgabenblatts ist es, die Theorie praktisch anzuwenden und Best Practices kennenzulernen.
+
+Bearbeiten Sie die folgenden Aufgaben der Reihe nach.
+
+\subsection{Vorbereitung}
+
+Öffnen Sie Ihr bestehendes Projekt mit der Datei \texttt{index.html}.  
+Falls Sie noch keine funktionierende HTML-Datei haben, erstellen Sie eine neue Datei mit einer gültigen HTML-Grundstruktur.
+
+\subsection{Ungeordnete Liste erstellen}
+
+Erstellen Sie im \texttt{body} Ihrer Webseite eine ungeordnete Liste (\texttt{ul}) mit mindestens vier Einträgen.  
+Die Liste soll eine Aufzählung Ihrer Lieblings-Webseiten oder -Themen darstellen.
+
+Überlegen Sie sich:
+\begin{itemize}
+  \item Ist die Reihenfolge der Elemente relevant?
+  \item Weshalb eignet sich hier eine ungeordnete Liste?
+\end{itemize}
+
+\subsection{Geordnete Liste erstellen}
+
+Erstellen Sie unterhalb der ungeordneten Liste eine geordnete Liste (\texttt{ol}) mit mindestens drei Schritten.
+
+Beispielhafte Themen:
+\begin{itemize}
+  \item Vorgehen beim Erstellen einer Webseite
+  \item Schritte beim Programmieren
+\end{itemize}
+
+Vergleichen Sie visuell die Unterschiede zwischen \texttt{ul} und \texttt{ol} im Browser.
+
+\subsection{Verschachtelte Liste}
+
+Erweitern Sie eine bestehende Liste, indem Sie eine verschachtelte Liste hinzufügen.
+
+Beispiel:
+\begin{itemize}
+  \item Hauptpunkt
+    \begin{itemize}
+      \item Unterpunkt
+      \item Unterpunkt
+    \end{itemize}
+\end{itemize}
+
+Achten Sie auf eine saubere Struktur und korrekte Einrückung im Code.
+
+\subsection{Navigation erstellen}
+
+Erstellen Sie eine Navigation für Ihre Webseite.
+
+\begin{itemize}
+  \item Verwenden Sie das semantische Element \texttt{nav}
+  \item Innerhalb der Navigation verwenden Sie eine \texttt{ul}
+  \item Jeder Menüpunkt soll ein \texttt{a}-Element sein
+\end{itemize}
+
+Die Navigation soll mindestens folgende Punkte enthalten:
+\begin{itemize}
+  \item Home
+  \item Über uns
+  \item Kontakt
+\end{itemize}
+
+\subsection{Interne Links}
+
+Legen Sie für jeden Navigationspunkt eine eigene HTML-Datei an:
+\begin{itemize}
+  \item \texttt{index.html}
+  \item \texttt{about.html}
+  \item \texttt{contact.html}
+\end{itemize}
+
+Stellen Sie sicher, dass Sie mithilfe der Navigation zwischen allen Seiten wechseln können.
+
+\subsection{Externer Link}
+
+Fügen Sie Ihrer Navigation oder dem Seiteninhalt einen externen Link hinzu.
+
+Vorgaben:
+\begin{itemize}
+  \item Der Link soll auf eine externe Webseite zeigen (z.B. https://google.com)
+  \item Verwenden Sie das Attribut \texttt{target="\_blank"}
+\end{itemize}
+
+Beobachten Sie das Verhalten im Browser und erklären Sie den Unterschied zu internen Links.
+
+\subsection{Best Practices für Linktexte}
+
+Überprüfen Sie alle Linktexte Ihrer Webseite.
+
+Beantworten Sie folgende Fragen:
+\begin{itemize}
+  \item Sind die Linktexte beschreibend?
+  \item Würden die Links auch ohne Kontext Sinn ergeben?
+  \item Gibt es generische Begriffe wie „hier klicken“?
+\end{itemize}
+
+Verbessern Sie die Linktexte falls nötig.
+
+\subsection{Analyseaufgabe}
+
+Öffnen Sie eine beliebige professionelle Webseite Ihrer Wahl.
+
+Analysieren Sie:
+\begin{itemize}
+  \item Wie ist die Navigation aufgebaut?
+  \item Werden Listen verwendet?
+  \item Sind die Linktexte klar und verständlich?
+\end{itemize}
+
+Notieren Sie mindestens zwei Beobachtungen.
+
+\subsection{Bonus: Erweiterung}
+
+Erweitern Sie Ihre Navigation um einen weiteren Menüpunkt Ihrer Wahl.
+
+Optional:
+\begin{itemize}
+  \item Fügen Sie eine verschachtelte Navigation hinzu (Untermenü)
+  \item Recherchieren Sie, wie solche Menüs mit CSS gestaltet werden können
+\end{itemize}
+
+\end{document}
