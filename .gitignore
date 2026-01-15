@@ -5,6 +5,8 @@ node_modules/
 *.iml
 *.iws
 *.eml
+*.aux
+*.log
 out/
 .DS_Store
 .svn
