@@ -1,0 +1,51 @@
+<!-- Theoriefragen
+    1.1 Um von Suchmaschinen möglichst effizient analysiert zu werden und um die Barrierefreiheit zu steigern.
+    1.2 Da es sonst zu viel Inhalt in einer einzelnen Datei gibt. Es ist wichtig die Abhängigkeiten einer Seite voneinander zu trennen.
+    1.3 Lesbarkeit, Ermöglicht besseres Arbeiten im Team
+    1.4 Um dem Browser eindeutig mitzuteilen, dass es sich um ein HTML-Dokument handelt.
+-->
+
+<!-- Probleme im Code 
+    - Code nicht eingerückt
+    - Keine semantischen Tags verwendet
+    - Headings in der falschen Reihenfolge 
+    - Heading h2 nicht verwendet. (Direkt von h1 auf h3)
+    - Erstes Div nutzt inline styling
+    - img hat kein alt Attribut
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meine Webseite</title>
+
+        <style>
+            header {
+                background-color: blue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Meine Webseite</h1>
+        </header>
+
+        <main>
+            <section>
+                <p><b>Willkommen</b></p>
+            </section>
+        </main>
+
+        <section>
+            <p>Hier gehts zum <a href="kontakt.html">kontakt</a></p>
+        </section>
+
+        <img src="bild.jpg" alt="Eine Bildbeschreibung">
+
+        <section>
+            <h2>Produkte</h2>
+            <h3>Produkt A</h3>
+        </section>
+    </body>
+</html>
