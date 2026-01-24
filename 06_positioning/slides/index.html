@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - CSS Positionierung</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        td {
+            font-size: 21px;
+        }
+
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+
+        thead td {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Titel -->
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>CSS Positionierung</h3>
+                <p>Wie Elemente im Browser platziert werden</p>
+            </section>
+
+            <!-- Lernziele -->
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Verstehen, was CSS-Positionierung ist</li>
+                    <li>Die vier wichtigsten Positionierungsarten kennen</li>
+                    <li>Unterschiede im Verhalten erklären können</li>
+                    <li>Positionierung gezielt einsetzen</li>
+                </ul>
+            </section>
+
+            <!-- Einführung -->
+            <section>
+                <h2>Positionierung in CSS</h2>
+                <p>
+                    Mit CSS kann festgelegt werden, <strong>wo</strong> sich ein Element
+                    auf der Webseite befindet.
+                </p>
+                <ul>
+                    <li>Standardmässig folgen Elemente dem normalen Dokumentenfluss</li>
+                    <li>Mit <code class="inline-code">position</code> kann dieses Verhalten geändert werden</li>
+                </ul>
+            </section>
+
+            <!-- Position Property -->
+            <section>
+                <h2>Die Property position</h2>
+                <p>
+                    Die CSS-Property <code class="inline-code">position</code> bestimmt
+                    die Art der Positionierung eines Elements.
+                </p>
+                <p>Wichtige Werte:</p>
+                <ul>
+                    <li>static</li>
+                    <li>relative</li>
+                    <li>absolute</li>
+                    <li>fixed</li>
+                </ul>
+            </section>
+
+            <!-- Static -->
+            <section>
+                <h2>Statische Positionierung</h2>
+                <p>
+                    <code class="inline-code">position: static</code> ist der Standardwert.
+                </p>
+                <ul>
+                    <li>Elemente folgen dem normalen Dokumentenfluss</li>
+                    <li>top, left, right, bottom haben keine Wirkung</li>
+                    <li>Keine manuelle Verschiebung möglich</li>
+                </ul>
+            </section>
+
+            <!-- Static Beispiel -->
+            <section>
+                <h2>Beispiel: static</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .box {
+                            position: static;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    Das Element erscheint genau dort, wo es laut HTML-Struktur vorgesehen ist.
+                </p>
+
+                <img src="assets/img/static.png" />
+
+            </section>
+
+            <!-- Relative -->
+            <section>
+                <h2>Relative Positionierung</h2>
+                <p>
+                    <code class="inline-code">position: relative</code> positioniert ein Element
+                    relativ zu seiner ursprünglichen Position.
+                </p>
+                <ul>
+                    <li>Element bleibt im Dokumentenfluss</li>
+                    <li>Kann visuell verschoben werden</li>
+                    <li>Der ursprüngliche Platz bleibt reserviert</li>
+                </ul>
+            </section>
+
+            <!-- Relative Beispiel -->
+            <section>
+                <h2>Beispiel: relative</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .box {
+                            position: relative;
+                            top: 20px;
+                            left: 30px;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    Das Element wird verschoben, aber andere Elemente verhalten sich,
+                    als wäre es noch an der ursprünglichen Stelle.
+                </p>
+
+                <img src="assets/img/relative.png" />
+            </section>
+
+            <!-- Absolute -->
+            <section>
+                <h2>Absolute Positionierung</h2>
+                <p>
+                    <code class="inline-code">position: absolute</code> entfernt das Element
+                    aus dem normalen Dokumentenfluss.
+                </p>
+                <ul>
+                    <li>Positioniert relativ zum nächsten positionierten Elternelement</li>
+                    <li>Falls keines existiert: relativ zum Body</li>
+                    <li>Belegt keinen Platz mehr im Layout</li>
+                </ul>
+            </section>
+
+            <!-- Absolute Beispiel -->
+            <section>
+                <h2>Beispiel: absolute</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                            position: relative;
+                        }
+
+                        .box {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    Das Element wird innerhalb des Containers exakt positioniert.
+                </p>
+                
+                <img src="assets/img/absolute.png" />
+            </section>
+
+            <!-- Fixed -->
+            <section>
+                <h2>Fixe Positionierung</h2>
+                <p>
+                    <code class="inline-code">position: fixed</code> positioniert ein Element
+                    relativ zum Browserfenster.
+                </p>
+                <ul>
+                    <li>Bleibt beim Scrollen sichtbar</li>
+                    <li>Wird aus dem Dokumentenfluss entfernt</li>
+                    <li>Typisch für Header oder Buttons</li>
+                </ul>
+            </section>
+
+            <!-- Fixed Beispiel -->
+            <section>
+                <h2>Beispiel: fixed</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .header {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    Der Header bleibt immer am oberen Rand des Bildschirms sichtbar.
+                </p>
+
+                <img src="assets/img/fixed.png" />
+            </section>
+
+            <!-- Vergleich -->
+            <section>
+                <h2>Vergleich der Positionierungen</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Position</td>
+                            <td>Im Dokumentenfluss</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>static</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td>relative</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td>absolute</td>
+                            <td>Nein</td>
+                        </tr>
+                        <tr>
+                            <td>fixed</td>
+                            <td>Nein</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- z-index Einführung -->
+            <section>
+                <h2>Was ist z-index?</h2>
+                <p>
+                    Mit <code class="inline-code">z-index</code> wird festgelegt,
+                    <strong>welches Element im Vordergrund liegt</strong>.
+                </p>
+                <ul>
+                    <li>Gilt nur für positionierte Elemente</li>
+                    <li>Höherer Wert = weiter vorne</li>
+                    <li>Nützlich bei überlappenden Elementen</li>
+                </ul>
+            </section>
+
+            <!-- z-index Beispiel -->
+            <section>
+                <h2>Beispiel: z-index</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .box1 {
+                            position: absolute;
+                            z-index: 1;
+                        }
+
+                        .box2 {
+                            position: absolute;
+                            z-index: 2;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    <code class="inline-code">box2</code> liegt vor <code class="inline-code">box1</code>,
+                    da der z-index höher ist.
+                </p>
+
+                <img src="assets/img/z-index.png" />
+            </section>
+
+            <!-- tldr -->
+            <section>
+                <h2>tldr</h2>
+                <ul>
+                    <li class="fragment fade-up">static ist der Standard</li>
+                    <li class="fragment fade-up">relative verschiebt Elemente ohne Layoutbruch</li>
+                    <li class="fragment fade-up">absolute positioniert frei innerhalb eines Containers</li>
+                    <li class="fragment fade-up">fixed bleibt immer sichtbar</li>
+                    <li class="fragment fade-up">mit dem z-index kann die Überlagerungsreihenfolge von positionierten Elementen festgelegt werden</li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>

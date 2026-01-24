@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 06}
+\author{von Lukas Meier}
+\date{Unterricht vom 27.01.2026}
+
+\begin{document}
+\section*{Aufgabenblatt: Positionierung von Elementen mit CSS}
+
+\subsection*{Teil 1: Grundlagen verstehen}
+
+Beantworte die folgenden Fragen schriftlich:
+
+\begin{itemize}
+  \item Was bedeutet \texttt{position: static;}?
+  \item Welche CSS-Eigenschaften (\texttt{top}, \texttt{left}, \texttt{right}, \texttt{bottom}) haben bei \texttt{static} keine Wirkung?
+\end{itemize}
+
+\subsection*{Teil 2: Relative Positionierung}
+
+Gegeben ist folgendes CSS:
+
+\begin{verbatim}
+.box {
+  position: relative;
+  top: 20px;
+  left: 30px;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Beschreibe, von welchem Punkt aus das Element verschoben wird.
+  \item Bleibt der ursprüngliche Platz des Elements im Dokument erhalten?
+\end{itemize}
+
+Erstelle ein eigenes Beispiel mit:
+\begin{itemize}
+  \item einem Container
+  \item einem relativ positionierten Element
+\end{itemize}
+
+\subsection*{Teil 3: Absolute Positionierung}
+
+Erkläre den Unterschied zwischen \texttt{position: relative;} und \texttt{position: absolute;}.
+
+Gegeben ist folgender HTML-Code:
+
+\begin{verbatim}
+<div class="container">
+  <div class="box"></div>
+</div>
+\end{verbatim}
+
+Und folgendes CSS:
+
+\begin{verbatim}
+.container {
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Relativ zu welchem Element wird die Box positioniert?
+  \item Was passiert, wenn \texttt{position: relative;} beim Container entfernt wird?
+\end{itemize}
+
+\subsection*{Teil 4: Fixe Positionierung}
+
+Beschreibe in eigenen Worten, wie sich \texttt{position: fixed;} verhält.
+
+\begin{itemize}
+  \item Was passiert beim Scrollen der Seite?
+  \item Nenne zwei typische Einsatzgebiete für fixe Positionierung.
+\end{itemize}
+
+Erstelle ein Beispiel für:
+\begin{itemize}
+  \item eine fixe Navigationsleiste
+  \item ein fixes Informationsfeld
+\end{itemize}
+
+\subsection*{Teil 5: Z-Index verstehen}
+
+Gegeben sind zwei überlappende Boxen:
+
+\begin{verbatim}
+.box1 {
+  position: absolute;
+  z-index: 1;
+}
+
+.box2 {
+  position: absolute;
+  z-index: 2;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Welche Box liegt im Vordergrund?
+  \item Warum funktioniert \texttt{z-index} nur bei positionierten Elementen?
+\end{itemize}
+
+Erstelle ein eigenes Beispiel mit mindestens drei Elementen und unterschiedlichen \texttt{z-index}-Werten.
+
+\subsection*{Teil 6: Fehler finden und korrigieren}
+
+Der folgende CSS-Code enthält konzeptionelle Fehler:
+
+\begin{verbatim}
+.box {
+  z-index: 10;
+  top: 20px;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Erkläre, warum der Code nicht wie erwartet funktioniert.
+  \item Korrigiere den Code so, dass er sinnvoll eingesetzt werden kann.
+\end{itemize}
+
+\subsection*{Teil 7: Praxisaufgabe}
+
+Erstelle eine HTML-Seite mit folgenden Anforderungen:
+
+\begin{itemize}
+  \item Ein Container mit relativer Positionierung
+  \item Mindestens zwei absolut positionierte Elemente darin
+  \item Ein fixes Element, das beim Scrollen sichtbar bleibt
+  \item Überlappende Elemente mit sinnvoll eingesetztem \texttt{z-index}
+\end{itemize}
+
+Achte auf saubere Struktur und lesbaren Code.
+
+\subsection*{Teil 8: Reflexion}
+
+Beantworte die folgenden Fragen:
+
+\begin{itemize}
+  \item Welche Positionierungsart war am schwierigsten zu verstehen?
+  \item In welchen Situationen würdest du absolute Positionierung vermeiden?
+  \item Warum ist ein gutes Verständnis von Positionierung wichtig für Layouts?
+\end{itemize}
+
+\end{document}
