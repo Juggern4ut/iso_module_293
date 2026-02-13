@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - Repetition</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        td {
+            font-size: 21px;
+        }
+
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+
+        thead td {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Titel -->
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>Repetition</h3>
+                <p>Wiederholung aller bisherigen Themen</p>
+            </section>
+
+            <!-- Lernziele -->
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Die zentralen HTML- und CSS-Grundlagen sicher wiederholen</li>
+                    <li>Typische Fehler erkennen und korrigieren</li>
+                    <li>Zusammenhänge zwischen Struktur und Layout verstehen</li>
+                    <li>Gelerntes in einer kleinen Gesamtaufgabe anwenden</li>
+                </ul>
+            </section>
+
+            <!-- Überblick -->
+            <section>
+                <h2>Was wir bereits gelernt haben</h2>
+                <ul>
+                    <li>HTML-Grundstruktur und semantische Elemente</li>
+                    <li>CSS-Basics: Selektoren, Farben, Abstände, Klassen</li>
+                    <li>Box Model: content, padding, border, margin</li>
+                    <li>HTML Best Practices</li>
+                    <li>Listen, Navigation und Links</li>
+                    <li>Positionierung mit CSS</li>
+                    <li>Flexbox für moderne Layouts</li>
+                </ul>
+            </section>
+
+            <!-- HTML -->
+            <section>
+                <h2>Repetition: HTML Struktur</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        <!DOCTYPE html>
+                        <html lang="de">
+                          <head>
+                            <meta charset="UTF-8" />
+                            <title>Meine Seite</title>
+                          </head>
+                          <body>
+                            <h1>Willkommen</h1>
+                          </body>
+                        </html>
+                    </code>
+                </pre>
+                <p>Saubere Struktur ist die Grundlage für jedes spätere Styling.</p>
+            </section>
+
+            <!-- Semantik -->
+            <section>
+                <h2>Repetition: Semantische Elemente</h2>
+                <ul>
+                    <li><code class="inline-code">header</code>, <code class="inline-code">main</code>, <code class="inline-code">footer</code></li>
+                    <li><code class="inline-code">nav</code> für Navigationen</li>
+                    <li><code class="inline-code">section</code> für inhaltliche Bereiche</li>
+                    <li>Semantik verbessert Lesbarkeit, SEO und Barrierefreiheit</li>
+                </ul>
+            </section>
+
+            <!-- CSS Basics -->
+            <section>
+                <h2>Repetition: CSS Basics</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        h1 {
+                          color: #2e86de;
+                          margin-bottom: 16px;
+                        }
+
+                        .card {
+                          background: #f5f5f5;
+                          padding: 12px;
+                        }
+                    </code>
+                </pre>
+                <ul>
+                    <li>Selektoren gezielt einsetzen</li>
+                    <li>Mit Klassen wiederverwendbar stylen</li>
+                </ul>
+            </section>
+
+            <!-- Box Model -->
+            <section>
+                <h2>Repetition: Box Model</h2>
+                <ul>
+                    <li><strong>content:</strong> eigentlicher Inhalt</li>
+                    <li><strong>padding:</strong> Innenabstand</li>
+                    <li><strong>border:</strong> Rahmen</li>
+                    <li><strong>margin:</strong> Aussenabstand</li>
+                </ul>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .box {
+                          padding: 16px;
+                          border: 2px solid #fff;
+                          margin: 20px;
+                        }
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Best Practices -->
+            <section>
+                <h2>Repetition: Best Practices</h2>
+                <ul>
+                    <li>Einrückung und Struktur konsequent halten</li>
+                    <li>Sinnvolle Klassennamen statt kryptischer Namen</li>
+                    <li>Keine unnötigen verschachtelten div-Container</li>
+                    <li>Code kommentieren, wenn Logik nicht sofort klar ist</li>
+                </ul>
+            </section>
+
+            <!-- Listen und Links -->
+            <section>
+                <h2>Repetition: Listen, Navigation, Links</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        <nav>
+                          <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">Über uns</a></li>
+                            <li><a href="contact.html">Kontakt</a></li>
+                          </ul>
+                        </nav>
+                    </code>
+                </pre>
+                <p>Navigationen sollten logisch, kurz und konsistent aufgebaut sein.</p>
+            </section>
+
+            <!-- Positionierung -->
+            <section>
+                <h2>Repetition: Positionierung</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Wert</td>
+                            <td>Verhalten</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>static</td>
+                            <td>Standard, im normalen Dokumentenfluss</td>
+                        </tr>
+                        <tr>
+                            <td>relative</td>
+                            <td>Verschiebung relativ zur eigenen Position</td>
+                        </tr>
+                        <tr>
+                            <td>absolute</td>
+                            <td>Aus dem Fluss, relativ zum positionierten Elternteil</td>
+                        </tr>
+                        <tr>
+                            <td>fixed</td>
+                            <td>Fix relativ zum Browserfenster</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Flexbox -->
+            <section>
+                <h2>Repetition: Flexbox</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                          display: flex;
+                          justify-content: space-between;
+                          align-items: center;
+                          gap: 12px;
+                        }
+                    </code>
+                </pre>
+                <ul>
+                    <li><code class="inline-code">justify-content</code> steuert die Hauptachse</li>
+                    <li><code class="inline-code">align-items</code> steuert die Querachse</li>
+                </ul>
+            </section>
+
+            <!-- Mini Quiz -->
+            <section>
+                <h2>Mini-Quiz</h2>
+                <ul>
+                    <li>Welche Eigenschaft macht ein Element zum Flex-Container?</li>
+                    <li>Wofür wird das <code class="inline-code">nav</code>-Element verwendet?</li>
+                    <li>Was ist der Unterschied zwischen padding und margin?</li>
+                    <li>Wann verwendest du <code class="inline-code">position: absolute</code>?</li>
+                </ul>
+            </section>
+
+            <!-- Praxis -->
+            <section>
+                <h2>Praxisaufgabe</h2>
+                <p>
+                    Erstelle eine kleine Webseite mit Header, Navigation, Hauptinhalt und Footer.
+                </p>
+                <ul>
+                    <li>Semantische HTML-Struktur verwenden</li>
+                    <li>Box Model sichtbar einsetzen (padding, margin, border)</li>
+                    <li>Navigation mit Liste und Links erstellen</li>
+                    <li>Layout mit Flexbox aufbauen</li>
+                </ul>
+            </section>
+
+            <!-- tldr -->
+            <section>
+                <h2>tldr</h2>
+                <ul>
+                    <li class="fragment fade-up">HTML strukturiert den Inhalt</li>
+                    <li class="fragment fade-up">CSS gestaltet das Aussehen</li>
+                    <li class="fragment fade-up">Box Model und Positionierung steuern das Layout</li>
+                    <li class="fragment fade-up">Flexbox macht moderne, flexible Layouts einfach</li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>

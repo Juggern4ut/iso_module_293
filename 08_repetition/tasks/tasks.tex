@@ -1,0 +1,126 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 08}
+\author{von Lukas Meier}
+\date{Unterricht vom 10.02.2026}
+
+\begin{document}
+\section*{Aufgabenblatt: Repetition HTML und CSS}
+
+\subsection*{Teil 1: Grundlagen-Check}
+
+Beantworte die folgenden Fragen schriftlich:
+
+\begin{itemize}
+  \item Was ist der Zweck von \texttt{<!DOCTYPE html>}?
+  \item Was ist der Unterschied zwischen \texttt{id} und \texttt{class}?
+  \item Welche Aufgabe hat das \texttt{head}-Element?
+\end{itemize}
+
+\subsection*{Teil 2: HTML-Struktur verbessern}
+
+Der folgende Code ist unsauber:
+
+\begin{verbatim}
+<div>
+  <div>Meine Seite</div>
+  <div>
+    <div><a href="#">Home</a></div>
+    <div><a href="#">Kontakt</a></div>
+  </div>
+</div>
+\end{verbatim}
+
+\begin{itemize}
+  \item Überführe den Code in eine semantisch sinnvolle Struktur.
+  \item Verwende dabei mindestens: \texttt{header}, \texttt{nav}, \texttt{main}, \texttt{footer}.
+\end{itemize}
+
+\subsection*{Teil 3: CSS und Box Model}
+
+Gegeben ist folgendes CSS:
+
+\begin{verbatim}
+.card {
+  width: 200px;
+  padding: 20px;
+  border: 4px solid black;
+  margin: 10px;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Welche Bereiche gehören zum Box Model?
+  \item Wie verändert sich die sichtbare Grösse der Box durch Padding und Border?
+\end{itemize}
+
+Erstelle danach eine eigene Box-Klasse mit anderen Werten.
+
+\subsection*{Teil 4: Listen, Navigation und Links}
+
+Erstelle eine Navigation mit einer ungeordneten Liste und mindestens vier Links.
+
+\begin{itemize}
+  \item Einer der Links soll auf eine externe Seite zeigen.
+  \item Verwende für den externen Link \texttt{target="\_blank"}.
+  \item Formuliere klare, beschreibende Linktexte.
+\end{itemize}
+
+\subsection*{Teil 5: Positionierung}
+
+Erkläre den Unterschied zwischen:
+
+\begin{itemize}
+  \item \texttt{position: relative;}
+  \item \texttt{position: absolute;}
+  \item \texttt{position: fixed;}
+\end{itemize}
+
+Erstelle ein Beispiel mit einem relativ positionierten Container und einem absolut positionierten Element darin.
+
+\subsection*{Teil 6: Flexbox anwenden}
+
+Baue einen Bereich mit drei Karten nebeneinander.
+
+Vorgaben:
+\begin{itemize}
+  \item Nutze \texttt{display: flex;} im Container
+  \item Verwende \texttt{gap} für Abstände
+  \item Zentriere die Karten vertikal oder horizontal mit den passenden Flex-Eigenschaften
+\end{itemize}
+
+\subsection*{Teil 7: Gesamtaufgabe}
+
+Erstelle eine kleine Webseite mit:
+
+\begin{itemize}
+  \item Header mit Titel
+  \item Navigation mit Liste und Links
+  \item Hauptbereich mit zwei Content-Boxen
+  \item Footer mit kurzem Text
+\end{itemize}
+
+Anforderungen:
+\begin{itemize}
+  \item Semantische HTML-Struktur
+  \item Sauberes CSS mit Klassen
+  \item Sichtbarer Einsatz von Box Model, Positionierung \textbf{oder} Flexbox
+\end{itemize}
+
+\subsection*{Teil 8: Reflexion}
+
+Beantworte die folgenden Fragen:
+
+\begin{itemize}
+  \item Welches Thema aus den bisherigen Lektionen sitzt bereits sicher?
+  \item Wo brauchst du noch Übung?
+  \item Welche zwei konkreten Lernziele setzt du dir für die nächste Lektion?
+\end{itemize}
+
+\end{document}
