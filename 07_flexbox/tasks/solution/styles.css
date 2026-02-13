@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #0f172a;
+  color: #fff;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.main-nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+main {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  flex: 1 1 220px;
+  min-height: 120px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.grow-demo {
+  display: flex;
+  gap: 12px;
+}
+
+.item {
+  padding: 14px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+.item-a {
+  flex: 1;
+  background: #2563eb;
+}
+
+.item-b {
+  flex: 2;
+  background: #0891b2;
+}
+
+.item-c {
+  flex: 1;
+  background: #16a34a;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+  background: #111827;
+  color: #fff;
+  padding: 12px;
+}

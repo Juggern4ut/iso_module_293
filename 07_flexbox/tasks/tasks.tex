@@ -1,0 +1,134 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 07}
+\author{von Lukas Meier}
+\date{Unterricht vom 03.02.2026}
+
+\begin{document}
+\section*{Aufgabenblatt: Flexbox in CSS}
+
+\subsection*{Teil 1: Grundlagen verstehen}
+
+Beantworte die folgenden Fragen schriftlich:
+
+\begin{itemize}
+  \item Was ist der Unterschied zwischen einem normalen Block-Layout und einem Flex-Layout?
+  \item Welche Elemente werden zu Flex-Items?
+  \item Welche Eigenschaft aktiviert Flexbox auf einem Container?
+\end{itemize}
+
+\subsection*{Teil 2: Achsen verstehen}
+
+Gegeben ist folgendes CSS:
+
+\begin{verbatim}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item In welche Richtung verläuft die Hauptachse?
+  \item Wo liegt in diesem Fall die Querachse?
+\end{itemize}
+
+Ändere anschliessend \texttt{flex-direction} auf \texttt{column} und beschreibe die Unterschiede.
+
+\subsection*{Teil 3: Ausrichtung im Container}
+
+Erstelle ein eigenes Beispiel mit mindestens drei Boxen und einem Flex-Container.
+
+Teste nacheinander:
+\begin{itemize}
+  \item \texttt{justify-content: center;}
+  \item \texttt{justify-content: space-between;}
+  \item \texttt{align-items: center;}
+\end{itemize}
+
+Dokumentiere jeweils kurz, was sich sichtbar verändert.
+
+\subsection*{Teil 4: Umbruch und Abstände}
+
+Gegeben ist folgendes CSS:
+
+\begin{verbatim}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Was passiert, wenn der Platz in einer Zeile nicht mehr ausreicht?
+  \item Welchen Vorteil hat \texttt{gap} gegenüber Margins auf den einzelnen Items?
+\end{itemize}
+
+Erstelle ein Beispiel mit mindestens sechs Elementen, sodass ein Zeilenumbruch sichtbar wird.
+
+\subsection*{Teil 5: Eigenschaften von Flex-Items}
+
+Untersuche folgende Werte:
+
+\begin{verbatim}
+.item-a { flex: 1; }
+.item-b { flex: 2; }
+.item-c { flex: 1; }
+\end{verbatim}
+
+\begin{itemize}
+  \item Welches Element bekommt am meisten Platz?
+  \item Wie verändert sich das Layout, wenn alle Elemente \texttt{flex: 1;} erhalten?
+\end{itemize}
+
+\subsection*{Teil 6: Fehler finden und korrigieren}
+
+Der folgende Code enthält konzeptionelle Fehler:
+
+\begin{verbatim}
+.item {
+  justify-content: center;
+  align-items: center;
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Warum funktionieren diese Eigenschaften hier nicht wie erwartet?
+  \item Korrigiere den Code so, dass die Ausrichtung korrekt funktioniert.
+\end{itemize}
+
+\subsection*{Teil 7: Praxisaufgabe}
+
+Erstelle eine kleine Startseite mit:
+
+\begin{itemize}
+  \item einer Navigationsleiste mit Logo und drei Links
+  \item einem Kartenbereich mit mindestens vier Karten
+  \item einem Footer
+\end{itemize}
+
+Verwende Flexbox für alle drei Bereiche und achte auf:
+\begin{itemize}
+  \item saubere Struktur
+  \item sinnvolle Klassennamen
+  \item lesbaren und eingerückten Code
+\end{itemize}
+
+\subsection*{Teil 8: Reflexion}
+
+Beantworte die folgenden Fragen:
+
+\begin{itemize}
+  \item Welche Flexbox-Eigenschaft war für dich am hilfreichsten?
+  \item Bei welcher Aufgabe hattest du Schwierigkeiten und warum?
+  \item In welcher realen Webseite könntest du Flexbox direkt einsetzen?
+\end{itemize}
+
+\end{document}

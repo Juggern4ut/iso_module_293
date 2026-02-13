@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - CSS Flexbox</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        td {
+            font-size: 21px;
+        }
+
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+
+        thead td {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Titel -->
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>CSS Flexbox</h3>
+                <p>Moderne Layouts einfach und flexibel erstellen</p>
+            </section>
+
+            <!-- Lernziele -->
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Verstehen, was Flexbox ist und wann es verwendet wird</li>
+                    <li>Container- und Item-Properties unterscheiden können</li>
+                    <li>Elemente entlang Haupt- und Querachse ausrichten</li>
+                    <li>Responsive Layouts mit Flexbox umsetzen</li>
+                </ul>
+            </section>
+
+            <!-- Einführung -->
+            <section>
+                <h2>Was ist Flexbox?</h2>
+                <p>
+                    Flexbox ist ein Layout-Modell in CSS, um Elemente in einer Zeile oder
+                    Spalte flexibel anzuordnen.
+                </p>
+                <ul>
+                    <li>Ideal für Navigationen, Kartenlayouts und UI-Elemente</li>
+                    <li>Einfaches Zentrieren von Inhalten</li>
+                    <li>Sehr gut für responsive Layouts geeignet</li>
+                </ul>
+            </section>
+
+            <!-- Flex Container -->
+            <section>
+                <h2>Flex Container aktivieren</h2>
+                <p>
+                    Ein Element wird zum Flex-Container mit
+                    <code class="inline-code">display: flex</code>.
+                </p>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                            display: flex;
+                        }
+                    </code>
+                </pre>
+                <p>Alle direkten Kind-Elemente werden damit zu Flex-Items.</p>
+            </section>
+
+            <!-- Achsen -->
+            <section>
+                <h2>Hauptachse und Querachse</h2>
+                <ul>
+                    <li><strong>Hauptachse (main axis):</strong> Richtung der Flex-Items</li>
+                    <li><strong>Querachse (cross axis):</strong> senkrecht zur Hauptachse</li>
+                    <li>
+                        Die Achsenrichtung wird mit
+                        <code class="inline-code">flex-direction</code> festgelegt
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Flex Direction -->
+            <section>
+                <h2>flex-direction</h2>
+                <p>Definiert die Richtung der Hauptachse.</p>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                            display: flex;
+                            flex-direction: row;
+                        }
+                    </code>
+                </pre>
+                <ul>
+                    <li><code class="inline-code">row</code> (Standard)</li>
+                    <li><code class="inline-code">column</code></li>
+                    <li><code class="inline-code">row-reverse</code></li>
+                    <li><code class="inline-code">column-reverse</code></li>
+                </ul>
+            </section>
+
+            <!-- justify-content -->
+            <section>
+                <h2>justify-content</h2>
+                <p>
+                    Richtet Flex-Items entlang der <strong>Hauptachse</strong> aus.
+                </p>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    </code>
+                </pre>
+                <ul>
+                    <li>flex-start, center, flex-end</li>
+                    <li>space-between, space-around, space-evenly</li>
+                </ul>
+            </section>
+
+            <!-- align-items -->
+            <section>
+                <h2>align-items</h2>
+                <p>
+                    Richtet Flex-Items entlang der <strong>Querachse</strong> aus.
+                </p>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                            display: flex;
+                            align-items: center;
+                        }
+                    </code>
+                </pre>
+                <ul>
+                    <li>stretch (Standard)</li>
+                    <li>flex-start, center, flex-end</li>
+                    <li>baseline</li>
+                </ul>
+            </section>
+
+            <!-- gap -->
+            <section>
+                <h2>Abstände mit gap</h2>
+                <p>
+                    Mit <code class="inline-code">gap</code> werden gleichmässige Abstände
+                    zwischen Flex-Items erzeugt.
+                </p>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                            display: flex;
+                            gap: 16px;
+                        }
+                    </code>
+                </pre>
+            </section>
+
+            <!-- wrap -->
+            <section>
+                <h2>flex-wrap</h2>
+                <p>
+                    Bestimmt, ob Items in die nächste Zeile umbrechen dürfen.
+                </p>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .container {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+                    </code>
+                </pre>
+                <ul>
+                    <li><code class="inline-code">nowrap</code> (Standard)</li>
+                    <li><code class="inline-code">wrap</code></li>
+                    <li><code class="inline-code">wrap-reverse</code></li>
+                </ul>
+            </section>
+
+            <!-- Flex Item -->
+            <section>
+                <h2>Eigenschaften von Flex-Items</h2>
+                <p>Wichtige Properties für einzelne Items:</p>
+                <ul>
+                    <li><code class="inline-code">flex-grow</code>: darf wachsen</li>
+                    <li><code class="inline-code">flex-shrink</code>: darf schrumpfen</li>
+                    <li><code class="inline-code">flex-basis</code>: Startgrösse</li>
+                    <li><code class="inline-code">align-self</code>: individuelle Ausrichtung</li>
+                </ul>
+            </section>
+
+            <!-- flex shorthand -->
+            <section>
+                <h2>Shorthand: flex</h2>
+                <p>
+                    Die Property <code class="inline-code">flex</code> kombiniert
+                    <code class="inline-code">grow</code>,
+                    <code class="inline-code">shrink</code> und
+                    <code class="inline-code">basis</code>.
+                </p>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        .item {
+                            flex: 1;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    <code class="inline-code">flex: 1</code> verteilt den verfügbaren Platz
+                    gleichmässig auf alle Items.
+                </p>
+            </section>
+
+            <!-- Beispiel Layout -->
+            <section>
+                <h2>Beispiel: einfache Navbar</h2>
+                <pre>
+                    <code class="hljs css" data-trim>
+                        nav {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    Logo links, Navigation rechts und alles vertikal sauber ausgerichtet.
+                </p>
+            </section>
+
+            <!-- Demo -->
+            <section>
+                <h2>Demo</h2>
+                <p class="codepen" data-height="500" data-default-tab="result" data-slug-hash="xbKgrjJ"
+                    data-pen-title="Flexbox Playground" data-user="Lumnezia"
+                    style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/Lumnezia/pen/xbKgrjJ">
+                            Flexbox Playground</a> by Kurkkuleipä (<a
+                            href="https://codepen.io/Lumnezia">@Lumnezia</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://public.codepenassets.com/embed/index.js"></script>
+            </section>
+
+            <!-- Vergleich -->
+            <section>
+                <h2>Häufige Flexbox-Properties</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Property</td>
+                            <td>Gilt für</td>
+                            <td>Zweck</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>justify-content</td>
+                            <td>Container</td>
+                            <td>Ausrichtung auf Hauptachse</td>
+                        </tr>
+                        <tr>
+                            <td>align-items</td>
+                            <td>Container</td>
+                            <td>Ausrichtung auf Querachse</td>
+                        </tr>
+                        <tr>
+                            <td>gap</td>
+                            <td>Container</td>
+                            <td>Abstand zwischen Items</td>
+                        </tr>
+                        <tr>
+                            <td>flex</td>
+                            <td>Item</td>
+                            <td>Wachstum/Schrumpfen/Startgrösse</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- tldr -->
+            <section>
+                <h2>tldr</h2>
+                <ul>
+                    <li class="fragment fade-up">Flexbox macht Layouts flexibel und übersichtlich</li>
+                    <li class="fragment fade-up">Container steuert Ausrichtung, Items steuern ihr eigenes Verhalten</li>
+                    <li class="fragment fade-up">justify-content = Hauptachse, align-items = Querachse</li>
+                    <li class="fragment fade-up">Mit wrap und gap lassen sich responsive Layouts einfach bauen</li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>
