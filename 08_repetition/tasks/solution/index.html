@@ -3,44 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Musterlösung Aufgabenblatt 08 - Repetition</title>
+  <title>Musterlösung Aufgabenblatt 07 - Flexbox</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <h1>Meine Lernseite</h1>
-    <p>Repetition HTML und CSS</p>
+    <div class="logo">WebBasics</div>
+    <nav class="main-nav">
+      <a href="#">Home</a>
+      <a href="#">Kurse</a>
+      <a href="#">Kontakt</a>
+    </nav>
   </header>
 
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#">Start</a></li>
-      <li><a href="#">Themen</a></li>
-      <li><a href="#">Übungen</a></li>
-      <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
-    </ul>
-  </nav>
-
-  <main class="content">
-    <section class="box info-box">
-      <h2>Content Box 1</h2>
-      <p>Diese Box zeigt das Box Model mit padding, border und margin.</p>
-    </section>
-
-    <section class="box highlight-box">
-      <h2>Content Box 2</h2>
-      <p>Diese Box ist leicht versetzt, um relative Positionierung zu zeigen.</p>
-    </section>
-
+  <main>
     <section class="cards">
-      <article class="card">Karte A</article>
-      <article class="card">Karte B</article>
-      <article class="card">Karte C</article>
+      <article class="card">Karte 1</article>
+      <article class="card">Karte 2</article>
+      <article class="card">Karte 3</article>
+      <article class="card">Karte 4</article>
+    </section>
+
+    <section class="grow-demo">
+      <div class="item item-a">A (flex: 1)</div>
+      <div class="item item-b">B (flex: 2)</div>
+      <div class="item item-c">C (flex: 1)</div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Modul 293</p>
+    <p>Footer Bereich - ebenfalls mit Flexbox ausgerichtet</p>
   </footer>
 </body>
 </html>
