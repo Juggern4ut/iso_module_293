@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Musterlösung Aufgabenblatt 07 - Flexbox</title>
+  <title>Musterlösung Aufgabenblatt 06 - Positionierung</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo">WebBasics</div>
-    <nav class="main-nav">
-      <a href="#">Home</a>
-      <a href="#">Kurse</a>
-      <a href="#">Kontakt</a>
-    </nav>
-  </header>
+  <div class="fixed-note">Fixes Infofeld</div>
 
-  <main>
-    <section class="cards">
-      <article class="card">Karte 1</article>
-      <article class="card">Karte 2</article>
-      <article class="card">Karte 3</article>
-      <article class="card">Karte 4</article>
+  <main class="content">
+    <section class="intro">
+      <h2>Relative Positionierung</h2>
+      <p>Die blaue Box ist relativ verschoben. Ihr ursprünglicher Platz bleibt erhalten.</p>
+      <div class="relative-box">relative</div>
     </section>
 
-    <section class="grow-demo">
-      <div class="item item-a">A (flex: 1)</div>
-      <div class="item item-b">B (flex: 2)</div>
-      <div class="item item-c">C (flex: 1)</div>
+    <section class="position-demo">
+      <h2>Absolute Positionierung + Z-Index</h2>
+      <p>Der Container ist relativ positioniert. Die beiden Badge-Elemente sind absolut positioniert.</p>
+
+      <div class="container">
+        <div class="card base">Basis-Box</div>
+        <div class="card overlap-one">z-index 2</div>
+        <div class="card overlap-two">z-index 3</div>
+        <div class="badge badge-left">ABS links</div>
+        <div class="badge badge-right">ABS rechts</div>
+      </div>
+    </section>
+
+    <section class="spacer">
+      <h2>Scrollbereich</h2>
+      <p>Beim Scrollen bleibt das fixe Infofeld sichtbar.</p>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>Footer Bereich - ebenfalls mit Flexbox ausgerichtet</p>
-  </footer>
 </body>
 </html>
