@@ -11,116 +11,357 @@
 \date{Unterricht vom 10.02.2026}
 
 \begin{document}
+
+\maketitle
+
 \section*{Aufgabenblatt: Repetition HTML und CSS}
 
-\subsection*{Teil 1: Grundlagen-Check}
+Bearbeiten Sie die Aufgaben in der vorgegebenen Reihenfolge. Die Aufgaben werden pro Thema schrittweise anspruchsvoller.
 
-Beantworte die folgenden Fragen schriftlich:
+\section*{Thema 1: HTML Grundlagen}
 
+\subsection*{Aufgabe 1.1 -- Begriffe sicher unterscheiden}
+Erklären Sie in eigenen Worten:
 \begin{itemize}
-  \item Was ist der Zweck von \texttt{<!DOCTYPE html>}?
-  \item Was ist der Unterschied zwischen \texttt{id} und \texttt{class}?
-  \item Welche Aufgabe hat das \texttt{head}-Element?
+  \item Was ist ein HTML-Tag?
+  \item Was ist ein Attribut?
+  \item Was ist der Unterschied zwischen Start-Tag, End-Tag und Inhalt?
 \end{itemize}
 
-\subsection*{Teil 2: HTML-Struktur verbessern}
+Geben Sie pro Begriff ein kurzes Beispiel an.
 
-Der folgende Code ist unsauber:
+\subsection*{Aufgabe 1.2 -- Tags erkennen und einordnen}
+Analysieren Sie den folgenden Code:
+
+\begin{verbatim}
+<a href="https://example.com" target="_blank">Zur Website</a>
+<img src="bild.jpg" alt="Profilbild">
+<section class="intro">Willkommen</section>
+\end{verbatim}
+
+Bearbeiten Sie dazu:
+\begin{itemize}
+  \item Markieren Sie alle Tags.
+  \item Markieren Sie alle Attribute.
+  \item Notieren Sie, welches Element selbstschliessend ist.
+\end{itemize}
+
+\subsection*{Aufgabe 1.3 -- Selbstschliessende Tags}
+Erstellen Sie eine kurze HTML-Struktur (ohne CSS und nur den body) mit:
+\begin{itemize}
+  \item einer Hauptüberschrift
+  \item einem Absatz
+  \item einem Zeilenumbruch
+  \item einem Bild mit sinnvollem \texttt{alt}-Attribut
+  \item einer horizontalen Linie
+\end{itemize}
+
+Verwenden Sie dabei mindestens drei selbstschliessende Tags.
+
+\subsection*{Aufgabe 1.4 -- Semantik verbessern}
+Gegeben ist folgender HTML-Ausschnitt:
 
 \begin{verbatim}
 <div>
-  <div>Meine Seite</div>
+  <div>Meine Lernseite</div>
   <div>
-    <div><a href="#">Home</a></div>
-    <div><a href="#">Kontakt</a></div>
+    <div>Start</div>
+    <div>Kontakt</div>
+  </div>
+  <div>
+    <div>Heute üben wir HTML.</div>
   </div>
 </div>
 \end{verbatim}
 
-\begin{itemize}
-  \item Überführe den Code in eine semantisch sinnvolle Struktur.
-  \item Verwende dabei mindestens: \texttt{header}, \texttt{nav}, \texttt{main}, \texttt{footer}.
-\end{itemize}
+Ersetzen Sie die unspezifischen \texttt{div}-Elemente durch semantisch passende Tags (z.\,B. \texttt{header}, \texttt{nav}, \texttt{main}, \texttt{section}, \texttt{footer}).
 
-\subsection*{Teil 3: CSS und Box Model}
-
-Gegeben ist folgendes CSS:
+\subsection*{Aufgabe 1.5 -- Fehleranalyse}
+Im folgenden Code stecken mehrere konzeptionelle Fehler:
 
 \begin{verbatim}
-.card {
-  width: 200px;
-  padding: 20px;
-  border: 4px solid black;
-  margin: 10px;
+<section>
+  <h1 class="titel">Wochenplan
+  <p id="text" "wichtig">Montag: CSS wiederholen</p>
+  <img source="plan.png">
+</section>
+\end{verbatim}
+
+Bearbeiten Sie:
+\begin{itemize}
+  \item Finden Sie die vier Fehler.
+  \item Korrigieren Sie den Code vollständig.
+  \item Begründen Sie jede Korrektur in einem Satz.
+\end{itemize}
+
+\subsection*{Aufgabe 1.6 -- Transferaufgabe HTML}
+Erstellen Sie eine vollständige Mini-Seite mit:
+\begin{itemize}
+  \item \texttt{header} mit Titel
+  \item \texttt{nav} mit mindestens drei Links
+  \item \texttt{main} mit zwei \texttt{section}-Bereichen
+  \item mindestens einem selbstschliessenden Tag
+  \item \texttt{footer} mit Copyright-Text
+\end{itemize}
+
+Achten Sie auf korrekte Verschachtelung und sinnvolle Semantik.
+
+\section*{Thema 2: CSS Selektoren}
+
+\subsection*{Aufgabe 2.1 -- Grundprinzipien}
+Beantworten Sie schriftlich:
+\begin{itemize}
+  \item Wie spricht man ein Element in CSS nur über den Tag-Namen an?
+  \item Wie spricht man eine Klasse an?
+  \item Wie spricht man eine ID an?
+\end{itemize}
+
+Geben Sie je ein kurzes Beispiel (\texttt{HTML + CSS}) an.
+
+\subsection*{Aufgabe 2.2 -- Selektoren zuordnen}
+Gegeben ist dieser HTML-Code:
+
+\begin{verbatim}
+<h1 id="title">Modul 293</h1>
+<p class="info">Einführung</p>
+<p class="info">Repetition</p>
+<button class="info" id="start-btn">Start</button>
+\end{verbatim}
+
+Notieren Sie für die folgenden Selektoren jeweils, welche Elemente getroffen werden:
+\begin{itemize}
+  \item \texttt{p}
+  \item \texttt{.info}
+  \item \texttt{\#title}
+  \item \texttt{button.info}
+\end{itemize}
+
+\subsection*{Aufgabe 2.3 -- Mehrere Elemente in einem Selektor}
+Erstellen Sie CSS-Regeln, sodass:
+\begin{itemize}
+  \item \texttt{h1}, \texttt{h2} und \texttt{h3} dieselbe Textfarbe erhalten
+  \item alle \texttt{p}- und \texttt{li}-Elemente dieselbe Schriftgrösse erhalten
+  \item die Klasse \texttt{note} und die ID \texttt{warning} dieselbe Hintergrundfarbe erhalten
+\end{itemize}
+
+Nutzen Sie dafür jeweils gruppierte Selektoren mit Komma.
+
+\subsection*{Aufgabe 2.4 -- Kombinierte Selektoren}
+Ergänzen Sie passende CSS-Regeln für folgende Anforderungen:
+\begin{itemize}
+  \item Nur \texttt{p}-Elemente mit Klasse \texttt{info} sollen blau sein.
+  \item Nur das Element mit ID \texttt{menu} soll einen Rand erhalten.
+  \item Nur \texttt{li}-Elemente innerhalb einer Klasse \texttt{nav} sollen fett sein.
+\end{itemize}
+
+Erklären Sie kurz, warum ein allgemeiner Selektor wie \texttt{.info} hier zu ungenau wäre.
+
+\subsection*{Aufgabe 2.5 -- Fehler finden und korrigieren}
+Korrigieren Sie den CSS-Code:
+
+\begin{verbatim}
+title {
+  color: red;
+}
+
+#.intro {
+  font-size: 20px;
+}
+
+p, .hinweis #wichtig {
+  background: yellow;
 }
 \end{verbatim}
 
+Bearbeiten Sie:
 \begin{itemize}
-  \item Welche Bereiche gehören zum Box Model?
-  \item Wie verändert sich die sichtbare Grösse der Box durch Padding und Border?
+  \item Korrigieren Sie alle Syntax- und Logikfehler.
+  \item Erklären Sie pro Zeile kurz, was falsch war.
 \end{itemize}
 
-Erstelle danach eine eigene Box-Klasse mit anderen Werten.
-
-\subsection*{Teil 4: Listen, Navigation und Links}
-
-Erstelle eine Navigation mit einer ungeordneten Liste und mindestens vier Links.
-
+\subsection*{Aufgabe 2.6 -- Transferaufgabe Selektoren}
+Erstellen Sie einen HTML-Ausschnitt mit mindestens:
 \begin{itemize}
-  \item Einer der Links soll auf eine externe Seite zeigen.
-  \item Verwende für den externen Link \texttt{target="\_blank"}.
-  \item Formuliere klare, beschreibende Linktexte.
+  \item 2 Überschriften
+  \item 3 Absätzen
+  \item 1 Liste mit 4 Einträgen
+  \item 1 Button
 \end{itemize}
 
-\subsection*{Teil 5: Positionierung}
-
-Erkläre den Unterschied zwischen:
-
+Erstellen Sie danach CSS mit:
 \begin{itemize}
-  \item \texttt{position: relative;}
-  \item \texttt{position: absolute;}
-  \item \texttt{position: fixed;}
+  \item mindestens einem Tag-Selektor
+  \item mindestens zwei Klassen-Selektoren
+  \item mindestens einem ID-Selektor
+  \item mindestens zwei gruppierten Selektoren
+  \item mindestens einem kombinierten Selektor (z.\,B. \texttt{p.info})
 \end{itemize}
 
-Erstelle ein Beispiel mit einem relativ positionierten Container und einem absolut positionierten Element darin.
+\section*{Thema 3: CSS Box-Modell}
 
-\subsection*{Teil 6: Flexbox anwenden}
+\subsection*{Aufgabe 3.1 -- Theorie verstehen}
+Beschreiben Sie den Aufbau des Box-Modells in der korrekten Reihenfolge von innen nach aussen.
 
-Baue einen Bereich mit drei Karten nebeneinander.
-
-Vorgaben:
+Erklären Sie anschliessend in eigenen Worten:
 \begin{itemize}
-  \item Nutze \texttt{display: flex;} im Container
-  \item Verwende \texttt{gap} für Abstände
-  \item Zentriere die Karten vertikal oder horizontal mit den passenden Flex-Eigenschaften
+  \item Was ist \texttt{padding}?
+  \item Was ist \texttt{margin}?
+  \item Welche CSS-Properties werden für diese verwendet?
 \end{itemize}
 
-\subsection*{Teil 7: Gesamtaufgabe}
-
-Erstelle eine kleine Webseite mit:
-
+\subsection*{Aufgabe 3.2 -- Box aufbauen}
+Erstellen Sie eine Klasse \texttt{.card} mit:
 \begin{itemize}
-  \item Header mit Titel
-  \item Navigation mit Liste und Links
-  \item Hauptbereich mit zwei Content-Boxen
-  \item Footer mit kurzem Text
+  \item \texttt{width: 280px}
+  \item \texttt{padding: 16px}
+  \item \texttt{border: 2px solid black}
+  \item \texttt{margin: 20px}
 \end{itemize}
 
-Anforderungen:
+Skizzieren Sie zusätzlich, welcher Bereich Inhalt, Padding, Border und Margin ist.
+
+\subsection*{Aufgabe 3.3 -- Margin vs. Padding gezielt testen}
+Erstellen Sie zwei gleich grosse Boxen nebeneinander oder untereinander.
+
+Bearbeiten Sie schrittweise:
 \begin{itemize}
-  \item Semantische HTML-Struktur
-  \item Sauberes CSS mit Klassen
-  \item Sichtbarer Einsatz von Box Model, Positionierung \textbf{oder} Flexbox
+  \item Erhöhen Sie nur das \texttt{padding} und beobachten Sie den Effekt.
+  \item Setzen Sie das \texttt{padding} zurück und erhöhen Sie nur die \texttt{margin}.
+  \item Beschreiben Sie den Unterschied in mindestens drei Sätzen.
 \end{itemize}
 
-\subsection*{Teil 8: Reflexion}
+\subsection*{Aufgabe 3.4 -- Block und Inline vergleichen}
+Untersuchen Sie je ein \texttt{div}- und ein \texttt{span}-Element.
 
-Beantworte die folgenden Fragen:
-
+Bearbeiten Sie:
 \begin{itemize}
-  \item Welches Thema aus den bisherigen Lektionen sitzt bereits sicher?
-  \item Wo brauchst du noch Übung?
-  \item Welche zwei konkreten Lernziele setzt du dir für die nächste Lektion?
+  \item Welche Standard-\texttt{display}-Werte haben die beiden Elemente?
+  \item Welche Eigenschaften (\texttt{width}, \texttt{height}, vertikale \texttt{margin}) wirken bei \texttt{span} standardmässig nicht wie erwartet?
+  \item Ändern Sie das \texttt{span} auf \texttt{display: inline-block;} und vergleichen Sie erneut.
 \end{itemize}
+
+\subsection*{Aufgabe 3.5 -- Rechnen mit dem Box-Modell}
+Gegeben:
+\begin{itemize}
+  \item \texttt{width: 300px}
+  \item \texttt{padding-left: 20px}
+  \item \texttt{padding-right: 20px}
+  \item \texttt{border-left: 3px}
+  \item \texttt{border-right: 3px}
+\end{itemize}
+
+Berechnen Sie die gesamte sichtbare Breite:
+\begin{itemize}
+  \item einmal mit \texttt{box-sizing: content-box}
+  \item einmal mit \texttt{box-sizing: border-box}
+\end{itemize}
+
+Erklären Sie den Unterschied.
+
+\subsection*{Aufgabe 3.6 -- Transferaufgabe Box-Modell}
+Erstellen Sie ein kleines Layout mit drei Karten (\texttt{article}-Elemente):
+\begin{itemize}
+  \item Jede Karte enthält Titel und Text.
+  \item Jede Karte hat sichtbare Unterschiede bei Margin und Padding.
+  \item Mindestens eine Karte verwendet \texttt{display: inline-block}.
+  \item Für alle Elemente soll \texttt{box-sizing: border-box;} gesetzt sein.
+\end{itemize}
+
+Dokumentieren Sie kurz, warum Ihr Layout trotz Abständen übersichtlich bleibt.
+
+\section*{Thema 4: CSS Positionierung}
+
+\subsection*{Aufgabe 4.1 -- Positionierungsarten beschreiben}
+Erklären Sie die Unterschiede zwischen:
+\begin{itemize}
+  \item \texttt{position: static}
+  \item \texttt{position: relative}
+  \item \texttt{position: absolute}
+  \item \texttt{position: fixed}
+\end{itemize}
+
+Ergänzen Sie pro Positionierungsart ein typisches Einsatzbeispiel.
+
+\subsection*{Aufgabe 4.2 -- Relative Positionierung anwenden}
+Erstellen Sie einen Container mit einer Box.
+
+Setzen Sie die Box auf \texttt{position: relative;} und verschieben Sie sie mit:
+\begin{itemize}
+  \item \texttt{top}
+  \item \texttt{left}
+\end{itemize}
+
+Beschreiben Sie:
+\begin{itemize}
+  \item Von welchem Ursprungsort verschoben wird.
+  \item Ob der ursprüngliche Platz im Dokumentfluss erhalten bleibt.
+\end{itemize}
+
+\subsection*{Aufgabe 4.3 -- Absolute Positionierung}
+Erstellen Sie folgenden Aufbau:
+\begin{itemize}
+  \item Ein Container mit \texttt{position: relative;}
+  \item Zwei Kind-Elemente mit \texttt{position: absolute;}
+\end{itemize}
+
+Positionieren Sie die Kinder an unterschiedliche Ecken.
+
+Entfernen Sie danach testweise \texttt{position: relative;} beim Container und beschreiben Sie den Unterschied.
+
+\subsection*{Aufgabe 4.4 -- Fixed und Scrollverhalten}
+Erstellen Sie eine Seite mit genügend Inhalt zum Scrollen.
+
+Fügen Sie ein fixes Element hinzu (z.\,B. Hinweisbox oder Top-Bar) mit \texttt{position: fixed;} und passenden Offset-Werten.
+
+Analysieren Sie:
+\begin{itemize}
+  \item Was passiert beim Scrollen?
+  \item Welchen Einfluss hat das feste Element auf die Nutzbarkeit der Seite?
+\end{itemize}
+
+\subsection*{Aufgabe 4.5 -- Display und Dokumentfluss}
+Erstellen Sie drei Boxen mit unterschiedlichem Inhalt untereinander.
+
+Testen Sie nacheinander bei allen Boxen gleichzeitig:
+\begin{itemize}
+  \item \texttt{display: block}
+  \item \texttt{display: inline}
+  \item \texttt{display: inline-block}
+\end{itemize}
+
+Passen Sie nun das CSS einzelner Boxen an:
+\begin{itemize}
+  \item Kombination mit \texttt{position: relative} und \texttt{position: absolute}
+\end{itemize}
+
+Beschreiben Sie für jeden Fall den Einfluss auf den Dokumentfluss.
+
+\subsection*{Aufgabe 4.6 -- Transferaufgabe Positionierung}
+Erstellen Sie eine Mini-Webseite mit:
+\begin{itemize}
+  \item fixer Kopfzeile
+  \item Hauptbereich mit relativ positioniertem Container
+  \item zwei absolut positionierten Markierungen innerhalb dieses Containers
+  \item mindestens einem Element, das normal im Dokumentfluss bleibt
+\end{itemize}
+
+Ergänzen Sie eine kurze Reflexion (5--6 Sätze):
+\begin{itemize}
+  \item Wann ist absolute Positionierung sinnvoll?
+  \item Wann sollte man sie vermeiden?
+  \item Welche Rolle spielt \texttt{display} im Zusammenspiel mit \texttt{position}?
+\end{itemize}
+
+\section*{Abschlussaufgabe (optional)}
+
+Erstellen Sie eine kompakte Lernseite, in der alle vier Themen sichtbar vorkommen:
+\begin{itemize}
+  \item semantische HTML-Struktur
+  \item verschiedene CSS-Selektoren
+  \item bewusst eingesetztes Box-Modell
+  \item mindestens zwei Positionierungsarten
+\end{itemize}
+
+Ziel: Ein sauberes, gut lesbares Mini-Projekt, das die gesamte Repetition zusammenfasst.
 
 \end{document}
