@@ -1,0 +1,559 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Lösungsblatt 08}
+\author{von Lukas Meier}
+\date{Unterricht vom 10.02.2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lösungsblatt: Repetition HTML und CSS}
+
+\section*{Thema 1: HTML Grundlagen}
+
+\subsection*{Lösung 1.1 -- Begriffe sicher unterscheiden}
+\begin{itemize}
+  \item Ein \textbf{HTML-Tag} ist eine Markierung in spitzen Klammern, die dem Browser sagt, welche Rolle ein Inhalt hat, z.\,B. \texttt{<p>} für einen Absatz.
+  \item Ein \textbf{Attribut} liefert zusätzliche Informationen zu einem Tag, z.\,B. \texttt{href} bei einem Link oder \texttt{alt} bei einem Bild.
+  \item \textbf{Start-Tag}: öffnet das Element (z.\,B. \texttt{<h1>}), \textbf{End-Tag}: schliesst es (\texttt{</h1>}), \textbf{Inhalt}: steht dazwischen (z.\,B. \texttt{Titel}).
+\end{itemize}
+
+Beispiel:
+\begin{verbatim}
+<h1 class="titel">Willkommen</h1>
+\end{verbatim}
+Tag: \texttt{h1}, Attribut: \texttt{class="titel"}, Inhalt: \texttt{Willkommen}.
+
+\subsection*{Lösung 1.2 -- Tags erkennen und einordnen}
+Code:
+\begin{verbatim}
+<a href="https://example.com" target="_blank">Zur Website</a>
+<img src="bild.jpg" alt="Profilbild">
+<section class="intro">Willkommen</section>
+\end{verbatim}
+
+\begin{itemize}
+  \item Tags: \texttt{<a> ... </a>}, \texttt{<img>}, \texttt{<section> ... </section>}.
+  \item Attribute: \texttt{href}, \texttt{target}, \texttt{src}, \texttt{alt}, \texttt{class}.
+  \item Selbstschliessendes Element in diesem Ausschnitt: \texttt{<img>}.
+\end{itemize}
+
+\subsection*{Lösung 1.3 -- Selbstschliessende Tags}
+Eine mögliche Lösung (nur Body-Inhalt):
+\begin{verbatim}
+<h1>Mein Lerntagebuch</h1>
+<p>Heute wiederhole ich HTML und CSS.<br />Ich übe Schritt für Schritt.</p>
+<img src="lernen.jpg" alt="Schreibtisch mit Laptop und Notizen">
+<hr />
+\end{verbatim}
+
+Selbstschliessende Tags hier: \texttt{<br />}, \texttt{<img />}, \texttt{<hr />}.
+
+\subsection*{Lösung 1.4 -- Semantik verbessern}
+Eine mögliche semantische Struktur:
+\begin{verbatim}
+<header>
+  <h1>Meine Lernseite</h1>
+</header>
+<nav>
+  <a href="#">Start</a>
+  <a href="#">Kontakt</a>
+</nav>
+<main>
+  <section>
+    <p>Heute üben wir HTML.</p>
+  </section>
+</main>
+\end{verbatim}
+
+\subsection*{Lösung 1.5 -- Fehleranalyse}
+Korrigierter Code:
+\begin{verbatim}
+<section>
+  <h1 class="titel">Wochenplan</h1>
+  <p id="text" class="wichtig">Montag: CSS wiederholen</p>
+  <img src="plan.png" alt="Wochenplan als Bild" />
+</section>
+\end{verbatim}
+
+Vier Fehler und Begründung:
+\begin{itemize}
+  \item \texttt{<h1>} wurde nicht geschlossen: Überschriften mit Inhalt brauchen ein End-Tag.
+  \item \texttt{"wichtig"} war ein ungültiges freies Attributfragment: für Klassennamen braucht es \texttt{class="..."}.
+  \item Bei \texttt{<img>} war \texttt{source} falsch: korrekt ist \texttt{src}.
+  \item Der Selbtschliessende \texttt{img}-Tag wurde am Ende nicht mit einem \texttt{/} geschlossen.
+\end{itemize}
+
+\subsection*{Lösung 1.6 -- Transferaufgabe HTML}
+Eine vollständige Mini-Seite:
+\begin{verbatim}
+<body>
+  <header>
+    <h1>Lektion 08 Repetition</h1>
+  </header>
+
+  <nav>
+    <a href="thema1.html">Thema 1</a>
+    <a href="thema2.html">Thema 2</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <main>
+    <section id="thema1">
+      <h2>HTML</h2>
+      <p>Hier wiederholen wir Tags und Attribute.</p>
+      <hr>
+    </section>
+
+    <section id="thema2">
+      <h2>CSS</h2>
+      <p>Hier wiederholen wir Selektoren und Layout.</p>
+      <img src="css.png" alt="CSS Logo">
+    </section>
+  </main>
+
+  <footer id="kontakt">
+    <p>copyright 2026 Modul 293</p>
+  </footer>
+</body>
+\end{verbatim}
+
+\section*{Thema 2: CSS Selektoren}
+
+\subsection*{Lösung 2.1 -- Grundprinzipien}
+\begin{itemize}
+  \item Tag-Selektor: direkt mit dem Tag-Namen, z.\,B. \texttt{p \{ color: blue; \}}.
+  \item Klassen-Selektor: mit Punkt, z.\,B. \texttt{.info \{ color: green; \}}.
+  \item ID-Selektor: mit Raute, z.\,B. \texttt{\#title \{ color: red; \}}.
+\end{itemize}
+
+Mini-Beispiel:
+\begin{verbatim}
+<h1 id="title">Titel</h1>
+<p class="info">Text</p>
+
+h1 { font-size: 32px; }
+.info { color: green; }
+#title { text-transform: uppercase; }
+\end{verbatim}
+
+\subsection*{Lösung 2.2 -- Selektoren zuordnen}
+Gegebenes HTML:
+\begin{verbatim}
+<h1 id="title">Modul 293</h1>
+<p class="info">Einführung</p>
+<p class="info">Repetition</p>
+<button class="info" id="start-btn">Start</button>
+\end{verbatim}
+
+Selektierte Elemente:
+\begin{itemize}
+  \item \texttt{p} selektiert die beiden Absatz-Elemente.
+  \item \texttt{.info} selektiert beide \texttt{p} und den \texttt{button}.
+  \item \texttt{\#title} selektiert nur das \texttt{h1}-Element.
+  \item \texttt{button.info} selektiert nur den \texttt{button} mit Klasse \texttt{info}.
+\end{itemize}
+
+\subsection*{Lösung 2.3 -- Mehrere Elemente in einem Selektor}
+Mögliche CSS-Lösung:
+\begin{verbatim}
+h1, h2, h3 {
+  color: #1f4e79;
+}
+
+p, li {
+  font-size: 18px;
+}
+
+.note, #warning {
+  background-color: #fff3cd;
+}
+\end{verbatim}
+
+\subsection*{Lösung 2.4 -- Kombinierte Selektoren}
+Mögliche CSS-Regeln:
+\begin{verbatim}
+p.info {
+  color: blue;
+}
+
+#menu {
+  border: 2px solid #333;
+}
+
+.nav li {
+  font-weight: bold;
+}
+\end{verbatim}
+
+Warum \texttt{.info} zu ungenau ist:
+\begin{itemize}
+  \item \texttt{.info} trifft alle Elemente mit dieser Klasse (z.\,B. \texttt{p}, \texttt{div}, \texttt{button}).
+  \item Mit \texttt{p.info} wird gezielt nur der Absatz mit dieser Klasse angesprochen.
+\end{itemize}
+
+\subsection*{Lösung 2.5 -- Fehler finden und korrigieren}
+Korrigierte Variante:
+\begin{verbatim}
+#title {
+  color: red;
+}
+
+.intro {
+  font-size: 20px;
+}
+
+p.hinweis, #wichtig {
+  background: yellow;
+}
+\end{verbatim}
+
+Kurzbegründung pro Block:
+\begin{itemize}
+  \item \texttt{title} würde das HTML-\texttt{<title>}-Element meinen; gemeint war hier typischerweise die ID \texttt{title}.
+  \item \texttt{\#.intro} ist ungültig, da \texttt{\#} und \texttt{.} nicht gleichzeitig für denselben einfachen Selektor stehen.
+  \item \texttt{p, .hinweis \#wichtig} Logikfehler! Id's sollen immer nur einmal im HTML vorkommen. Ein Selektor für alle Elemente mit der ID wichtig in allen Klassen hinweis macht also keinen Sinn.
+\end{itemize}
+
+\subsection*{Lösung 2.6 -- Transferaufgabe Selektoren}
+Möglicher HTML-Ausschnitt:
+\begin{verbatim}
+<h1 id="page-title">Repetition</h1>
+<h2 class="subtitle">Selektoren</h2>
+
+<p class="info">Absatz 1</p>
+<p>Absatz 2</p>
+<p class="info important">Absatz 3</p>
+
+<ul class="nav">
+  <li>Home</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Kontakt</li>
+</ul>
+
+<button id="start">Start</button>
+\end{verbatim}
+
+Passendes CSS:
+\begin{verbatim}
+/* Tag-Selektor */
+p {
+  line-height: 1.5;
+}
+
+/* Klassen-Selektoren */
+.info {
+  color: #0a4;
+}
+
+.subtitle {
+  letter-spacing: 0.5px;
+}
+
+/* ID-Selektor */
+#start {
+  border: 1px solid #333;
+}
+
+/* Gruppierte Selektoren */
+h1, h2 {
+  font-family: Arial, sans-serif;
+}
+
+ul, p {
+  margin-bottom: 12px;
+}
+
+/* Kombinierter Selektor */
+p.info {
+  font-weight: 600;
+}
+\end{verbatim}
+
+\section*{Thema 3: CSS Box-Modell}
+
+\subsection*{Lösung 3.1 -- Theorie verstehen}
+Reihenfolge von innen nach aussen:
+\begin{itemize}
+  \item \textbf{Content} (Inhalt)
+  \item \textbf{Padding} (Innenabstand)
+  \item \textbf{Border} (Rahmen)
+  \item \textbf{Margin} (Aussenabstand)
+\end{itemize}
+
+Erklärungen:
+\begin{itemize}
+  \item \texttt{padding} ist der Abstand zwischen Inhalt und Rahmen.
+  \item \texttt{margin} ist der Abstand eines Elements nach aussen zu anderen Elementen.
+  \item Verwendete Properties: \texttt{padding}, \texttt{padding-top/right/bottom/left}, \texttt{margin}, \texttt{margin-top/right/bottom/left}.
+\end{itemize}
+
+\subsection*{Lösung 3.2 -- Box aufbauen}
+CSS:
+\begin{verbatim}
+.card {
+  width: 280px;
+  padding: 16px;
+  border: 2px solid black;
+  margin: 20px;
+}
+\end{verbatim}
+
+Skizze (textuell):
+\begin{itemize}
+  \item Mitte: Inhaltstext
+  \item Um den Inhalt: 16px Padding
+  \item Danach: 2px Border
+  \item Aussen: 20px Margin zur Umgebung
+\end{itemize}
+
+\subsection*{Lösung 3.3 -- Margin vs. Padding gezielt testen}
+Beobachtung:
+\begin{itemize}
+  \item Wenn nur \texttt{padding} grösser wird, wächst der innere Abstand zwischen Inhalt und Rahmen; die Box wirkt innen luftiger.
+  \item Wenn nur \texttt{margin} grösser wird, bleibt das Innere gleich, aber der Abstand zu anderen Elementen wird grösser.
+  \item \texttt{padding} beeinflusst den Innenraum der Box, \texttt{margin} den Aussenraum im Layout.
+\end{itemize}
+
+\subsection*{Lösung 3.4 -- Block und Inline vergleichen}
+\begin{itemize}
+  \item \texttt{div} ist standardmässig \texttt{display: block}.
+  \item \texttt{span} ist standardmässig \texttt{display: inline}.
+  \item Bei \texttt{span} wirken \texttt{width}, \texttt{height} und vertikale \texttt{margin} in der Regel nicht wie bei Block-Elementen.
+  \item Mit \texttt{display: inline-block} akzeptiert \texttt{span} Breite/Höhe und bleibt trotzdem im Textfluss.
+\end{itemize}
+
+\subsection*{Lösung 3.5 -- Rechnen mit dem Box-Modell}
+Gegeben: \texttt{width: 300px}, links/rechts \texttt{padding: 20px}, links/rechts \texttt{border: 3px}.
+
+\textbf{content-box}: 
+\begin{itemize}
+  \item Gesamtbreite = \(300 + 20 + 20 + 3 + 3 = 346\)px
+\end{itemize}
+
+\textbf{border-box}: 
+\begin{itemize}
+  \item Gesamtbreite = \(300\)px (Padding und Border sind in den 300px enthalten)
+\end{itemize}
+
+Unterschied: Bei \texttt{content-box} kommt Padding/Border zur Breite dazu, bei \texttt{border-box} nicht.
+
+\subsection*{Lösung 3.6 -- Transferaufgabe Box-Modell}
+Mögliche Lösung:
+\begin{verbatim}
+<section class="cards">
+  <article class="card card-a">
+    <h3>Karte A</h3>
+    <p>Mehr Padding, kleine Margin.</p>
+  </article>
+
+  <article class="card card-b">
+    <h3>Karte B</h3>
+    <p>Kleine Padding, grosse Margin.</p>
+  </article>
+
+  <article class="card card-c">
+    <h3>Karte C</h3>
+    <p>Inline-block Karte.</p>
+  </article>
+</section>
+\end{verbatim}
+
+\begin{verbatim}
+.card {
+  box-sizing: border-box;
+  width: 260px;
+  border: 2px solid #222;
+}
+
+.card-a {
+  padding: 24px;
+  margin: 8px;
+}
+
+.card-b {
+  padding: 10px;
+  margin: 24px;
+}
+
+.card-c {
+  padding: 16px;
+  margin: 12px;
+  display: inline-block;
+}
+\end{verbatim}
+
+Kurze Dokumentation:
+\begin{itemize}
+  \item Die Karten bleiben übersichtlich, weil \texttt{box-sizing: border-box} die Breite stabil hält.
+  \item Unterschiedliche Margin/Padding-Werte verändern gezielt den Innen- und Aussenabstand.
+\end{itemize}
+
+\section*{Thema 4: CSS Positionierung}
+
+\subsection*{Lösung 4.1 -- Positionierungsarten beschreiben}
+\begin{itemize}
+  \item \texttt{static}: Standard, Element bleibt normal im Dokumentfluss, \texttt{top/right/bottom/left} wirken nicht.
+  \item \texttt{relative}: Element bleibt im Fluss, kann aber visuell relativ zu seiner Ausgangsposition verschoben werden.
+  \item \texttt{absolute}: Element wird aus dem normalen Fluss genommen und relativ zum nächsten positionierten Vorfahren platziert.
+  \item \texttt{fixed}: Element wird relativ zum Viewport fixiert und bleibt beim Scrollen sichtbar.
+\end{itemize}
+
+Einsatzbeispiele:
+\begin{itemize}
+  \item \texttt{static}: normale Text- und Inhaltsblöcke
+  \item \texttt{relative}: kleine Korrekturpositionen bei Badges/Labels
+  \item \texttt{absolute}: Icons oder Marker in einer Karte
+  \item \texttt{fixed}: Sticky-Topbar oder dauerhaft sichtbarer Hilfe-Button
+\end{itemize}
+
+\subsection*{Lösung 4.2 -- Relative Positionierung anwenden}
+Beispiel:
+\begin{verbatim}
+.container {
+  width: 400px;
+  border: 1px solid #888;
+}
+
+.box {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+\end{verbatim}
+
+Beschreibung:
+\begin{itemize}
+  \item Verschoben wird vom ursprünglichen Platz der Box aus.
+  \item Der ursprüngliche Platz im Dokumentfluss bleibt reserviert.
+\end{itemize}
+
+\subsection*{Lösung 4.3 -- Absolute Positionierung}
+Beispiel:
+\begin{verbatim}
+.container {
+  position: relative;
+  width: 500px;
+  height: 220px;
+  border: 2px solid #333;
+}
+
+.marker-a {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.marker-b {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+\end{verbatim}
+
+Unterschied beim Entfernen von \texttt{position: relative} am Container:
+\begin{itemize}
+  \item Die Marker orientieren sich nicht mehr am Container, sondern am nächsten anderen positionierten Vorfahren (oder am Viewport).
+\end{itemize}
+
+\subsection*{Lösung 4.4 -- Fixed und Scrollverhalten}
+Beispiel:
+\begin{verbatim}
+.notice {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+}
+\end{verbatim}
+
+Analyse:
+\begin{itemize}
+  \item Das Element bleibt beim Scrollen sichtbar an derselben Stelle im Fenster.
+  \item Es verbessert die Sichtbarkeit wichtiger Infos, darf aber Inhalte nicht verdecken.
+\end{itemize}
+
+\subsection*{Lösung 4.5 -- Display und Dokumentfluss}
+Beobachtung:
+\begin{itemize}
+  \item \texttt{display: block}: jedes Element startet in neuer Zeile, nimmt standardmässig volle Breite ein.
+  \item \texttt{display: inline}: Elemente liegen in einer Zeile, Breite/Höhe nur eingeschränkt steuerbar.
+  \item \texttt{display: inline-block}: Elemente bleiben in einer Zeile, Breite/Höhe sind aber steuerbar.
+  \item \texttt{position: relative}: Element bleibt im Fluss, nur visuell verschoben.
+  \item \texttt{position: absolute}: Element verlässt den normalen Fluss und überlagert ggf. andere Elemente.
+\end{itemize}
+
+\subsection*{Lösung 4.6 -- Transferaufgabe Positionierung}
+Mögliche Mini-Webseite:
+\begin{verbatim}
+<header class="topbar">Modul 293</header>
+
+<main class="page-content">
+  <section class="board">
+    <span class="pin pin-a">A</span>
+    <span class="pin pin-b">B</span>
+    <article class="text-block">
+      Dieses Element bleibt normal im Dokumentfluss.
+    </article>
+  </section>
+</main>
+\end{verbatim}
+
+\begin{verbatim}
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+}
+
+.page-content {
+  margin-top: 70px;
+}
+
+.board {
+  position: relative;
+  min-height: 220px;
+  border: 2px solid #444;
+}
+
+.pin {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  text-align: center;
+}
+
+.pin-a { top: 12px; left: 12px; }
+.pin-b { bottom: 12px; right: 12px; }
+\end{verbatim}
+
+Reflexion (Beispiel):
+\begin{itemize}
+  \item Absolute Positionierung ist sinnvoll für dekorative Marker, Overlays und exakt platzierte UI-Elemente.
+  \item Sie sollte vermieden werden, wenn Inhalte dynamisch wachsen oder stark responsiv sein müssen.
+  \item Zu viele absolute Elemente führen schnell zu überlappenden Inhalten.
+  \item \texttt{display} steuert weiterhin, wie ein Element grundsätzlich im Layout erscheint (Block, Inline, Inline-Block).
+  \item \texttt{position} steuert dagegen, wie es im oder ausserhalb des Dokumentflusses platziert wird.
+  \item Erst das Zusammenspiel beider Eigenschaften ergibt ein stabiles Layout.
+\end{itemize}
+
+\section*{Lösung Abschlussaufgabe (optional)}
+Eine mögliche kompakte Lernseite erfüllt alle Kriterien durch:
+\begin{itemize}
+  \item Semantik: \texttt{header}, \texttt{nav}, \texttt{main}, \texttt{section}, \texttt{footer}
+  \item Selektoren: Kombination aus \texttt{h1}, \texttt{.info}, \texttt{\#menu}, \texttt{p.info}, \texttt{h1, h2}
+  \item Box-Modell: Karten mit \texttt{padding}, \texttt{margin}, \texttt{border}, global \texttt{box-sizing: border-box}
+  \item Positionierung: fixe Kopfzeile plus absolut positionierte Marker in einem relativ positionierten Container
+\end{itemize}
+
+\end{document}
