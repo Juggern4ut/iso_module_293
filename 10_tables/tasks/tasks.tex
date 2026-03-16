@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 10}
+\author{von Lukas Meier}
+\date{Unterricht vom 03.03.2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabenblatt: HTML-Tabellen (Grundlagen)}
+
+\subsection*{Teil 1: Grundelemente verstehen}
+Beantworte die folgenden Fragen schriftlich:
+\begin{itemize}
+  \item Wofür wird das Element \texttt{table} verwendet?
+  \item Was ist der Unterschied zwischen \texttt{th} und \texttt{td}?
+  \item Welche Aufgabe hat \texttt{tr}?
+\end{itemize}
+
+\subsection*{Teil 2: Tabelle aufbauen}
+Erstelle eine Tabelle mit:
+\begin{itemize}
+  \item einer Kopfzeile mit den Spalten \texttt{Name}, \texttt{Fach}, \texttt{Note}
+  \item mindestens vier Datenzeilen
+  \item sinnvoller Reihenfolge und korrekter Einrückung
+\end{itemize}
+
+\subsection*{Teil 3: Struktur verbessern}
+Erweitere deine Tabelle aus Teil 2 mit:
+\begin{itemize}
+  \item \texttt{caption}
+  \item \texttt{thead}
+  \item \texttt{tbody}
+\end{itemize}
+
+Notiere kurz, warum diese Elemente nützlich sind.
+
+\subsection*{Teil 4: Zellen zusammenfassen}
+Erstelle eine zweite Tabelle (z.\,B. Stundenplan), in der du verwendest:
+\begin{itemize}
+  \item mindestens einmal \texttt{colspan}
+  \item optional einmal \texttt{rowspan}
+\end{itemize}
+
+Beschreibe in 2--3 Sätzen, was durch das Zusammenfassen passiert.
+
+\subsection*{Teil 5: Fehler finden und korrigieren}
+Der folgende Code enthält Fehler:
+
+\begin{verbatim}
+<table>
+  <thead>
+    <th>Produkt</th>
+    <th>Preis</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tastatur
+      <td>49.-</td>
+    </tr>
+  </tbody>
+</table>
+\end{verbatim}
+
+\begin{itemize}
+  \item Finde mindestens drei Fehler.
+  \item Korrigiere den Code vollständig.
+  \item Begründe jede Korrektur in einem Satz.
+\end{itemize}
+
+\subsection*{Teil 6: Praxisaufgabe}
+Erstelle eine kleine HTML-Seite mit einem Bereich \texttt{main}, der eine sauber strukturierte Tabelle enthält.
+
+Anforderungen:
+\begin{itemize}
+  \item Tabelle mit \texttt{caption}, \texttt{thead}, \texttt{tbody}
+  \item mindestens 5 Datenzeilen
+  \item mindestens eine zusammengefasste Zelle mit \texttt{colspan}
+  \item lesbarer, eingerückter Code
+\end{itemize}
+
+\subsection*{Teil 7: Reflexion}
+Beantworte die folgenden Fragen kurz:
+\begin{itemize}
+  \item Was war heute bei Tabellen am einfachsten?
+  \item Wo gab es Unsicherheiten?
+  \item Woran erkennst du, dass eine HTML-Tabelle korrekt strukturiert ist?
+\end{itemize}
+
+\end{document}

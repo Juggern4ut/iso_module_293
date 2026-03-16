@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - HTML Tabellen</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        td {
+            font-size: 21px;
+        }
+
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+
+        thead td {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>HTML Tabellen</h3>
+                <p>Grundlagen für strukturierte Daten</p>
+            </section>
+
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Tabellen korrekt mit HTML-Grundelementen aufbauen</li>
+                    <li>Kopf- und Datenbereiche sauber trennen</li>
+                    <li>Einfache Tabellenfehler erkennen und vermeiden</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wann verwende ich Tabellen?</h2>
+                <ul>
+                    <li>Für strukturierte Daten in Zeilen und Spalten</li>
+                    <li>Zum Beispiel: Stundenplan, Preisliste, Rangliste</li>
+                    <li>Nicht für Seitenlayout verwenden</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Grundstruktur einer Tabelle</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;table>
+                          &lt;tr>
+                            &lt;th>Fach&lt;/th>
+                            &lt;th>Lehrperson&lt;/th>
+                          &lt;/tr>
+                          &lt;tr>
+                            &lt;td>Web&lt;/td>
+                            &lt;td>Herr Meier&lt;/td>
+                          &lt;/tr>
+                        &lt;/table>
+                    </code>
+                </pre>
+                <p><code class="inline-code">th</code> = Kopfzelle, <code class="inline-code">td</code> = Datenzelle.</p>
+            </section>
+
+            <section>
+                <h2>Saubere Struktur mit thead und tbody</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;table>
+                          &lt;thead>
+                            &lt;tr>&lt;th>Tag&lt;/th>&lt;th>Fach&lt;/th>&lt;/tr>
+                          &lt;/thead>
+                          &lt;tbody>
+                            &lt;tr>&lt;td>Montag&lt;/td>&lt;td>HTML&lt;/td>&lt;/tr>
+                          &lt;/tbody>
+                        &lt;/table>
+                    </code>
+                </pre>
+                <p>Das verbessert Lesbarkeit und Wartbarkeit.</p>
+            </section>
+
+            <section>
+                <h2>Beschriftung und Zusammenfassen</h2>
+                <ul>
+                    <li><code class="inline-code">caption</code> beschreibt den Tabelleninhalt</li>
+                    <li><code class="inline-code">colspan</code> verbindet Spalten</li>
+                    <li><code class="inline-code">rowspan</code> verbindet Zeilen</li>
+                </ul>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;caption>Stundenplan Klasse A&lt;/caption>
+                        &lt;td colspan="2">Projektarbeit&lt;/td>
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Typische Fehler</h2>
+                <ul>
+                    <li>Unterschied zwischen <code class="inline-code">th</code> und <code class="inline-code">td</code> ignoriert</li>
+                    <li>Unsaubere oder fehlende <code class="inline-code">tr</code>-Struktur</li>
+                    <li>Tabellen für reines Layout missbraucht</li>
+                    <li>Zu viele verschachtelte Tabellen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mini-Übung</h2>
+                <ol>
+                    <li>Erstelle eine Tabelle mit 3 Spalten und 4 Datenzeilen.</li>
+                    <li>Nutze <code class="inline-code">thead</code>, <code class="inline-code">tbody</code> und <code class="inline-code">caption</code>.</li>
+                    <li>Füge eine Zeile mit <code class="inline-code">colspan</code> ein.</li>
+                </ol>
+                <p>Ziel: korrekter Aufbau statt aufwendiges Styling.</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>
