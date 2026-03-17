@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - HTML Formulare II</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>HTML Formulare II</h3>
+                <p>Mehr Auswahlmöglichkeiten und längere Eingaben</p>
+            </section>
+
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Dropdowns mit <code class="inline-code">select</code> und <code class="inline-code">option</code> erstellen</li>
+                    <li>Radio-Buttons und Checkboxen unterscheiden</li>
+                    <li>Mehrzeilige Eingaben mit <code class="inline-code">textarea</code> erfassen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Dropdowns</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;select name="kurs">
+                          &lt;option>HTML&lt;/option>
+                          &lt;option>CSS&lt;/option>
+                          &lt;option>Flexbox&lt;/option>
+                        &lt;/select>
+                    </code>
+                </pre>
+                <ul>
+                    <li>Geeignet für eine Auswahl aus einer Liste</li>
+                    <li>Spart Platz bei vielen Optionen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Radio-Buttons</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;input type="radio" name="niveau" value="anfaenger" />
+                        &lt;input type="radio" name="niveau" value="mittel" />
+                        &lt;input type="radio" name="niveau" value="fortgeschritten" />
+                    </code>
+                </pre>
+                <ul>
+                    <li>Für genau eine Auswahl in einer Gruppe</li>
+                    <li>Gleicher <code class="inline-code">name</code> verbindet die Gruppe</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Checkboxen</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;input type="checkbox" name="extras" value="handout" />
+                        &lt;input type="checkbox" name="extras" value="zertifikat" />
+                    </code>
+                </pre>
+                <ul>
+                    <li>Für mehrere unabhängige Auswahlen</li>
+                    <li>0, 1 oder mehrere Optionen können aktiv sein</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Textarea</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;textarea name="bemerkung" rows="5">&lt;/textarea>
+                    </code>
+                </pre>
+                <ul>
+                    <li>Für längere, mehrzeilige Texte</li>
+                    <li>Zum Beispiel Kommentare, Feedback oder Fragen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wann nehme ich was?</h2>
+                <ul>
+                    <li>Dropdown: eine Auswahl aus vielen Optionen</li>
+                    <li>Radio: genau eine sichtbare Auswahl aus wenigen Optionen</li>
+                    <li>Checkbox: mehrere Optionen gleichzeitig</li>
+                    <li>Textarea: längerer Freitext</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Komplettes Beispiel</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;form action="/feedback" method="post">
+
+                          &lt;select name="thema">
+                            &lt;option>HTML&lt;/option>
+                            &lt;option>CSS&lt;/option>
+                          &lt;/select>
+
+                          &lt;input type="radio" name="delivery" value="Post" />
+                          &lt;input type="radio" name="delivery" value="Abholung" />
+
+                          &lt;input type="checkbox" name="extras" value="handout" />
+                          &lt;textarea name="kommentar" rows="4">&lt;/textarea>
+                          &lt;button type="submit">Senden&lt;/button>
+                        &lt;/form>
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Typische Fehler</h2>
+                <ul>
+                    <li>Radio-Buttons mit verschiedenen <code class="inline-code">name</code>-Werten versehen</li>
+                    <li>Checkboxen und Radio-Buttons verwechseln</li>
+                    <li><code class="inline-code">textarea</code> wie ein normales <code class="inline-code">input</code> schreiben</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mini-Übung</h2>
+                <ol>
+                    <li>Baue ein Feedback-Formular mit Dropdown, Radio-Buttons und Checkboxen.</li>
+                    <li>Ergänze eine <code class="inline-code">textarea</code> für Kommentare.</li>
+                    <li>Überlege bei jedem Element, warum es dort passt.</li>
+                </ol>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>

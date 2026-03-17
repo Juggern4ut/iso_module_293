@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musterlösung Aufgabenblatt 12 - HTML Formulare II</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Kursfeedback Web-Grundlagen</h1>
+    <p>Teile uns mit, wie du den Kurs erlebt hast.</p>
+
+    <form action="/feedback" method="post">
+      <label for="modul">Thema</label>
+      <select id="modul" name="modul">
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>Flexbox</option>
+        <option>Formulare</option>
+      </select>
+
+      <fieldset>
+        <legend>Tempo</legend>
+        <label><input type="radio" name="tempo" value="langsam" /> Langsam</label>
+        <label><input type="radio" name="tempo" value="passend" /> Passend</label>
+        <label><input type="radio" name="tempo" value="schnell" /> Schnell</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Zusatzwünsche</legend>
+        <label><input type="checkbox" name="wuensche" value="handout" /> Handout</label>
+        <label><input type="checkbox" name="wuensche" value="beispiele" /> Mehr Beispiele</label>
+        <label><input type="checkbox" name="wuensche" value="uebungen" /> Mehr Übungen</label>
+      </fieldset>
+
+      <label for="kommentar">Kommentar</label>
+      <textarea id="kommentar" name="kommentar" rows="6"></textarea>
+
+      <button type="submit">Feedback senden</button>
+    </form>
+  </main>
+</body>
+</html>

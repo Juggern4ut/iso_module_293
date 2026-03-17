@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 12}
+\author{von Lukas Meier}
+\date{Unterricht vom 24.03.2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabenblatt: HTML-Formulare II}
+
+\subsection*{Teil 1: Elemente zuordnen}
+Ordne die passenden Formularelemente zu:
+\begin{itemize}
+  \item Auswahl genau einer Option aus mehreren
+  \item Auswahl mehrerer unabhängiger Optionen
+  \item Auswahl aus einer Liste
+  \item längerer Freitext
+\end{itemize}
+
+Verwende dabei die Begriffe \texttt{select}, \texttt{option}, \texttt{radio}, \texttt{checkbox}, \texttt{textarea}.
+
+\subsection*{Teil 2: Dropdown bauen}
+Erstelle ein Formular mit einem Dropdown zur Auswahl eines Kurses.
+
+Anforderungen:
+\begin{itemize}
+  \item \texttt{select}-Element
+  \item mindestens vier \texttt{option}-Einträge
+  \item sinnvolles \texttt{name}-Attribut
+\end{itemize}
+
+\subsection*{Teil 3: Radios und Checkboxen}
+Erweitere das Formular aus Teil 2 mit:
+\begin{itemize}
+  \item Radio-Buttons für den Schwierigkeitsgrad: Anfänger, Mittel, Fortgeschritten
+  \item Checkboxen für Zusatzwünsche: Pausenkaffee, Handout, Zertifikat
+\end{itemize}
+
+\subsection*{Teil 4: Textarea ergänzen}
+Füge eine \texttt{textarea} hinzu.
+Darin sollen Teilnehmende Bemerkungen eingeben können.
+
+Beantworte zusätzlich:
+\begin{itemize}
+  \item Worin unterscheidet sich \texttt{textarea} von einem normalen Textfeld?
+\end{itemize}
+
+\subsection*{Teil 5: Code lesen}
+Betrachte den folgenden Code:
+
+\begin{verbatim}
+<form action="/feedback" method="post">
+  <select name="thema">
+    <option>HTML</option>
+    <option>CSS</option>
+  </select>
+
+  <input type="radio" name="tempo" value="langsam">
+  <input type="radio" name="tempo" value="schnell">
+
+  <input type="checkbox" name="material" value="handout">
+  <textarea name="kommentar"></textarea>
+</form>
+\end{verbatim}
+
+\begin{itemize}
+  \item Welche Arten von Eingaben sind hier möglich?
+  \item Warum haben die Radio-Buttons denselben \texttt{name}-Wert?
+  \item Welche Eingaben könnten mehrfach gewählt werden?
+\end{itemize}
+
+\subsection*{Teil 6: Praxisaufgabe}
+Erstelle eine kleine HTML-Seite mit einem Feedback- oder Anmeldeformular.
+
+Anforderungen:
+\begin{itemize}
+  \item ein Dropdown
+  \item mindestens drei Radio-Buttons
+  \item mindestens zwei Checkboxen
+  \item eine \texttt{textarea}
+  \item ein Submit-Button
+\end{itemize}
+
+\subsection*{Teil 7: Reflexion}
+Beantworte kurz:
+\begin{itemize}
+  \item Wann verwendest du ein Dropdown statt Radio-Buttons?
+  \item Wann sind Checkboxen sinnvoll?
+  \item Wo hattest du heute noch Unsicherheiten?
+\end{itemize}
+
+\end{document}
