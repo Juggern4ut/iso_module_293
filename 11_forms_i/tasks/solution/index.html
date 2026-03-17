@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musterlösung Aufgabenblatt 11 - HTML Formulare I</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Anmeldung HTML-Workshop</h1>
+    <p>Bitte fülle das Formular vollständig aus.</p>
+
+    <form action="/kursanmeldung" method="post">
+      <label for="vorname">Vorname</label>
+      <input id="vorname" type="text" name="vorname" />
+
+      <label for="nachname">Nachname</label>
+      <input id="nachname" type="text" name="nachname" />
+
+      <label for="alter">Alter</label>
+      <input id="alter" type="number" name="alter" />
+
+      <button type="submit">Anmeldung senden</button>
+    </form>
+  </main>
+</body>
+</html>

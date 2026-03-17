@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - HTML Formulare I</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>HTML Formulare I</h3>
+                <p>Grundlagen für Benutzereingaben</p>
+            </section>
+
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Den Zweck des Elements <code class="inline-code">form</code> verstehen</li>
+                    <li><code class="inline-code">action</code> und <code class="inline-code">method</code> grob einordnen</li>
+                    <li>Einfache Formulare mit Text-, Zahlenfeld und Submit-Button bauen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wozu dienen Formulare?</h2>
+                <ul>
+                    <li>Benutzereingaben auf einer Webseite erfassen</li>
+                    <li>Zum Beispiel: Anmeldung, Suche, Kontaktformular</li>
+                    <li>HTML sammelt die Daten, ein Server verarbeitet sie später</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Das Element form</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;form action="/anfrage" method="post">
+                          ...
+                        &lt;/form>
+                    </code>
+                </pre>
+                <ul>
+                    <li><code class="inline-code">form</code> ist der Rahmen für Eingabefelder und Buttons</li>
+                    <li>Alle Felder im Formular gehören logisch zusammen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>action und method</h2>
+                <ul>
+                    <li><code class="inline-code">action</code>: Wohin werden die Daten gesendet?</li>
+                    <li><code class="inline-code">method</code>: Wie werden die Daten gesendet?</li>
+                    <li>Für uns heute reicht: meist <code class="inline-code">get</code> oder <code class="inline-code">post</code></li>
+                </ul>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;form action="/registrieren" method="post">
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Einfache Eingabefelder</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;input type="text" name="vorname" />
+                        &lt;input type="number" name="alter" />
+                    </code>
+                </pre>
+                <ul>
+                    <li><code class="inline-code">type="text"</code> für kurze Texte</li>
+                    <li><code class="inline-code">type="number"</code> für Zahlenwerte</li>
+                    <li><code class="inline-code">name</code> benennt das Feld für die Übertragung</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Submit-Button</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;button type="submit">Absenden&lt;/button>
+                    </code>
+                </pre>
+                <ul>
+                    <li>Der Button sendet das Formular ab</li>
+                    <li>Ohne Submit-Button fehlt oft der offensichtliche Abschluss der Eingabe</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Komplettes Mini-Beispiel</h2>
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;form action="/kursanmeldung" method="post">
+                          &lt;input type="text" name="vorname" />
+                          &lt;input type="text" name="nachname" />
+                          &lt;input type="number" name="alter" />
+                          &lt;button type="submit">Senden&lt;/button>
+                        &lt;/form>
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Typische Fehler</h2>
+                <ul>
+                    <li><code class="inline-code">form</code> ohne <code class="inline-code">action</code> oder <code class="inline-code">method</code></li>
+                    <li>Falschen <code class="inline-code">type</code> verwenden</li>
+                    <li>Submit-Button vergessen</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>

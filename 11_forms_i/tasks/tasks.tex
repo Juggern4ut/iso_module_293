@@ -1,0 +1,102 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 11}
+\author{von Lukas Meier}
+\date{Unterricht vom 17.03.2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabenblatt: HTML-Formulare I}
+
+\subsection*{Teil 1: Grundbegriffe verstehen}
+Beantworte die folgenden Fragen kurz:
+\begin{itemize}
+  \item Wofür wird das Element \texttt{form} verwendet?
+  \item Was macht das Attribut \texttt{action} ganz grob?
+  \item Was macht das Attribut \texttt{method} ganz grob?
+  \item Welche Aufgabe hat ein Button mit \texttt{type="submit"}?
+\end{itemize}
+
+\subsection*{Teil 2: Formular-Grundstruktur schreiben}
+Erstelle ein einfaches HTML-Formular mit:
+\begin{itemize}
+  \item einem \texttt{form}-Element
+  \item \texttt{action="/anfrage"}
+  \item \texttt{method="post"}
+  \item einem Submit-Button
+\end{itemize}
+
+\subsection*{Teil 3: Eingabefelder ergänzen}
+Erweitere dein Formular aus Teil 2 mit:
+\begin{itemize}
+  \item einem Textfeld für den Vornamen
+  \item einem Textfeld für den Nachnamen
+  \item einem Zahlenfeld für das Alter
+\end{itemize}
+
+Verwende für jedes Feld sinnvolle \texttt{name}-Werte.
+
+\subsection*{Teil 4: Code lesen}
+Betrachte den folgenden Code:
+
+\begin{verbatim}
+<form action="/send" method="get">
+  <input type="text" name="stadt">
+  <input type="number" name="plz">
+  <button>Senden</button>
+</form>
+\end{verbatim}
+
+\begin{itemize}
+  \item Welche Daten kann der Benutzer hier eingeben?
+  \item Was passiert beim Klick auf den Button?
+\end{itemize}
+
+\subsection*{Teil 5: Fehler korrigieren}
+Der folgende Code enthält mehrere Probleme:
+
+\begin{verbatim}
+<form action="/registrieren" method="post">
+  <input type="text" name="vorname"
+  <input type="number" name="alter"></input>
+  <button type="submit">Absenden
+</form>
+\end{verbatim}
+
+\begin{itemize}
+  \item Finde mindestens drei Fehler.
+  \item Korrigiere den Code vollständig.
+  \item Begründe kurz jede Korrektur.
+\end{itemize}
+
+\subsection*{Teil 6: Praxisaufgabe}
+Erstelle eine kleine HTML-Seite mit einem Formular für eine Kursanmeldung.
+
+Anforderungen:
+\begin{itemize}
+  \item Überschrift und kurzer Einleitungstext
+  \item ein Formular mit \texttt{action} und \texttt{method}
+  \item zwei Textfelder
+  \item ein Zahlenfeld
+  \item ein Button mit \texttt{type="submit"}
+\end{itemize}
+
+Thema-Vorschlag: Anmeldung für einen HTML-Workshop.
+
+\subsection*{Teil 7: Reflexion}
+Beantworte kurz:
+\begin{itemize}
+  \item Was ist der Unterschied zwischen dem Formular selbst und den Eingabefeldern?
+  \item Warum braucht ein Formular meistens einen Submit-Button?
+  \item Was war heute noch unklar?
+\end{itemize}
+
+\end{document}
