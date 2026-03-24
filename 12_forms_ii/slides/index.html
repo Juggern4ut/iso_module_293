@@ -37,7 +37,8 @@
             <section>
                 <h2>Lernziele</h2>
                 <ul>
-                    <li>Dropdowns mit <code class="inline-code">select</code> und <code class="inline-code">option</code> erstellen</li>
+                    <li>Dropdowns mit <code class="inline-code">select</code> und <code
+                            class="inline-code">option</code> erstellen</li>
                     <li>Radio-Buttons und Checkboxen unterscheiden</li>
                     <li>Mehrzeilige Eingaben mit <code class="inline-code">textarea</code> erfassen</li>
                 </ul>
@@ -48,9 +49,9 @@
                 <pre>
                     <code class="hljs html" data-trim>
                         &lt;select name="kurs">
-                          &lt;option>HTML&lt;/option>
-                          &lt;option>CSS&lt;/option>
-                          &lt;option>Flexbox&lt;/option>
+                            &lt;option>HTML&lt;/option>
+                            &lt;option>CSS&lt;/option>
+                            &lt;option>Flexbox&lt;/option>
                         &lt;/select>
                     </code>
                 </pre>
@@ -58,6 +59,14 @@
                     <li>Geeignet für eine Auswahl aus einer Liste</li>
                     <li>Spart Platz bei vielen Optionen</li>
                 </ul>
+                <br />
+                <code class="hljs html" data-trim>
+                    <select name="kurs">
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>Flexbox</option>
+                    </select>
+                </code>
             </section>
 
             <section>
@@ -72,7 +81,15 @@
                 <ul>
                     <li>Für genau eine Auswahl in einer Gruppe</li>
                     <li>Gleicher <code class="inline-code">name</code> verbindet die Gruppe</li>
+                    <li>Kein Text/Label per Standart</li>
                 </ul>
+                <br />
+                <code class="hljs html" data-trim>
+                    <input type="radio" name="niveau" value="anfaenger" />
+                    <input type="radio" name="niveau" value="mittel" />
+                    <input type="radio" name="niveau" value="fortgeschritten" />
+                </code>
+
             </section>
 
             <section>
@@ -87,6 +104,13 @@
                     <li>Für mehrere unabhängige Auswahlen</li>
                     <li>0, 1 oder mehrere Optionen können aktiv sein</li>
                 </ul>
+
+                <br />
+
+                <code class="hljs html" data-trim>
+                    <input type="checkbox" name="extras" value="handout" />
+                    <input type="checkbox" name="extras" value="zertifikat" />
+                </code>
             </section>
 
             <section>
@@ -100,6 +124,11 @@
                     <li>Für längere, mehrzeilige Texte</li>
                     <li>Zum Beispiel Kommentare, Feedback oder Fragen</li>
                 </ul>
+                <br />
+
+                <code class="hljs html" data-trim>
+                    <textarea name="bemerkung" rows="5"></textarea>
+                </code>
             </section>
 
             <section>
@@ -117,21 +146,53 @@
                 <pre>
                     <code class="hljs html" data-trim>
                         &lt;form action="/feedback" method="post">
+                            &lt;select name="thema">
+                                &lt;option>HTML&lt;/option>
+                                &lt;option>CSS&lt;/option>
+                            &lt;/select>
 
-                          &lt;select name="thema">
-                            &lt;option>HTML&lt;/option>
-                            &lt;option>CSS&lt;/option>
-                          &lt;/select>
+                            &lt;input type="radio" name="delivery" value="Post" />
+                            &lt;input type="radio" name="delivery" value="Abholung" />
 
-                          &lt;input type="radio" name="delivery" value="Post" />
-                          &lt;input type="radio" name="delivery" value="Abholung" />
+                            &lt;input type="checkbox" name="extras" value="handout" />
 
-                          &lt;input type="checkbox" name="extras" value="handout" />
-                          &lt;textarea name="kommentar" rows="4">&lt;/textarea>
-                          &lt;button type="submit">Senden&lt;/button>
+                            &lt;textarea name="kommentar" rows="4">&lt;/textarea>
+
+                            &lt;button type="submit">Senden&lt;/button>
                         &lt;/form>
                     </code>
                 </pre>
+            </section>
+
+
+            <section>
+                <h2>Label Elemenmt</h2>
+                <ul>
+                    <li>Beschriften Eingabefelder</li>
+                    <li>Das Attribute 'for' verknüpft Labels mit der 'id' der Eingabefelder</li>
+                </ul>
+
+
+                <pre>
+                    <code class="hljs html" data-trim>
+                        &lt;label for="post">Post&lt;/label>
+                        &lt;input type="radio" id="post" value="Post" />
+
+                        &lt;label for="pickup">Post&lt;/label>
+                        &lt;input type="radio" id="pickup" value="Abholung" />
+                    </code>
+                </pre>
+
+                <code class="hljs html" data-trim>
+                    <div>
+                        <label for="post">Post</label>
+                        <input type="radio" name="delivery" id="post" value="Post" />
+                    </div>
+                    <div>
+                        <label for="pickup">Abholung</label>
+                        <input type="radio" name="delivery" id="pickup" value="Abholung" />
+                    </div>
+                </code>
             </section>
 
             <section>
@@ -139,17 +200,9 @@
                 <ul>
                     <li>Radio-Buttons mit verschiedenen <code class="inline-code">name</code>-Werten versehen</li>
                     <li>Checkboxen und Radio-Buttons verwechseln</li>
-                    <li><code class="inline-code">textarea</code> wie ein normales <code class="inline-code">input</code> schreiben</li>
+                    <li><code class="inline-code">textarea</code> wie ein normales <code
+                            class="inline-code">input</code> schreiben</li>
                 </ul>
-            </section>
-
-            <section>
-                <h2>Mini-Übung</h2>
-                <ol>
-                    <li>Baue ein Feedback-Formular mit Dropdown, Radio-Buttons und Checkboxen.</li>
-                    <li>Ergänze eine <code class="inline-code">textarea</code> für Kommentare.</li>
-                    <li>Überlege bei jedem Element, warum es dort passt.</li>
-                </ol>
             </section>
         </div>
     </div>
