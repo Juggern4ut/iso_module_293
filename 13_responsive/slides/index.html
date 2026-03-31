@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - Responsive Grundlagen</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        td {
+            font-size: 21px;
+        }
+
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+
+        .two-columns {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .two-columns>* {
+            flex: 1;
+        }
+
+        .small-text {
+            font-size: 0.8em;
+        }
+
+        thead td {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>Responsive Design</h3>
+                <p>Grundlagen für flexible Webseiten</p>
+            </section>
+
+            <section>
+                <h2>13 - Responsiveness</h2>
+                <hr />
+                <h3>HTML und CSS für verschiedene Bildschirmgrössen</h3>
+                <img style="width: 160px" src="assets/img/css_logo.png" alt="CSS Logo" />
+            </section>
+
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Verstehen, was Responsive Design bedeutet</li>
+                    <li>Media Queries mit <span class="inline-code">max-width</span> und <span class="inline-code">min-width</span> lesen und schreiben</li>
+                    <li>Einfache responsive Layouts mit Prozentwerten umsetzen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Was bedeutet responsive?</h2>
+                <ul>
+                    <li>Eine Webseite passt sich an verschiedene Bildschirmgrössen an</li>
+                    <li>Inhalte bleiben lesbar und bedienbar auf Handy, Tablet und Desktop</li>
+                    <li>Layout, Schriftgrössen und Abstände reagieren auf den verfügbaren Platz</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wichtige Grundlage im HTML</h2>
+                <p>Damit der Browser auf Mobilgeräten korrekt skaliert:</p>
+                <pre>
+                    <code class="hljs html" data-trim data-line-numbers>
+                        &lt;meta
+                          name="viewport"
+                          content="width=device-width, initial-scale=1.0"
+                        /&gt;
+                    </code>
+                </pre>
+                <p class="small-text">Ohne diese Zeile wirkt eine mobile Seite oft verkleinert oder unpraktisch.</p>
+            </section>
+
+            <section>
+                <h2>Media Query mit max-width</h2>
+                <p>Regeln gelten bis zu einer maximalen Breite.</p>
+                <pre>
+                    <code class="hljs css" data-trim data-line-numbers>
+                        @media (max-width: 700px) {
+                          body {
+                            background-color: #1f1f1f;
+                          }
+
+                          nav a {
+                            display: block;
+                            margin-bottom: 12px;
+                          }
+                        }
+                    </code>
+                </pre>
+                <p><span class="inline-code">max-width: 700px</span> ist typisch für kleinere Bildschirme.</p>
+            </section>
+
+            <section>
+                <h2>Media Query mit min-width</h2>
+                <p>Regeln gelten ab einer minimalen Breite.</p>
+                <pre>
+                    <code class="hljs css" data-trim data-line-numbers>
+                        @media (min-width: 900px) {
+                          .content {
+                            width: 80%;
+                            margin: 0 auto;
+                          }
+
+                          .card {
+                            display: inline-block;
+                            width: 30%;
+                          }
+                        }
+                    </code>
+                </pre>
+                <p><span class="inline-code">min-width</span> eignet sich gut, um Layouts für grössere Geräte zu erweitern.</p>
+            </section>
+
+            <section>
+                <h2>max-width oder min-width?</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Ansatz</td>
+                            <td>Typische Idee</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="inline-code">max-width</span></td>
+                            <td>Desktop zuerst, dann Anpassungen für kleinere Geräte</td>
+                        </tr>
+                        <tr>
+                            <td><span class="inline-code">min-width</span></td>
+                            <td>Mobile zuerst, dann Erweiterungen für grössere Geräte</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="small-text">Für neue Projekte ist mobile first mit <span class="inline-code">min-width</span> oft einfacher.</p>
+            </section>
+
+            <section>
+                <h2>Responsive Breiten mit Prozenten</h2>
+                <div class="two-columns">
+                    <div>
+                        <pre>
+                            <code class="hljs html" data-trim>
+                                &lt;main class="wrapper">
+                                  &lt;section class="left">Links&lt;/section>
+                                  &lt;section class="right">Rechts&lt;/section>
+                                &lt;/main>
+                            </code>
+                        </pre>
+                    </div>
+                    <div>
+                        <pre>
+                            <code class="hljs css" data-trim>
+                                .wrapper {
+                                  width: 90%;
+                                  margin: 0 auto;
+                                }
+
+                                .left,
+                                .right {
+                                  display: inline-block;
+                                  width: 48%;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>Prozentwerte machen Elemente flexibel, weil sie sich am verfügbaren Platz orientieren.</p>
+            </section>
+
+            <section>
+                <h2>Einfacher Umbruch für kleine Screens</h2>
+                <pre>
+                    <code class="hljs css" data-trim data-line-numbers>
+                        @media (max-width: 700px) {
+                          .left,
+                          .right {
+                            display: block;
+                            width: 100%;
+                          }
+                        }
+                    </code>
+                </pre>
+                <p>Zwei Spalten werden so auf kleinen Geräten untereinander dargestellt.</p>
+            </section>
+
+            <section>
+                <h2>Best Practices</h2>
+                <ul>
+                    <li>Mit einer einfachen Grundstruktur starten und erst dann erweitern</li>
+                    <li>Breiten möglichst mit <span class="inline-code">%</span> oder <span class="inline-code">max-width</span> statt nur mit fixen Pixeln definieren</li>
+                    <li>Inhalte auf echten kleinen und grossen Fenstern testen</li>
+                    <li>Abstände, Schriftgrössen und Buttons auf Lesbarkeit prüfen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Merksätze</h2>
+                <ul>
+                    <li><span class="inline-code">max-width</span>: Regel gilt bis zu einer bestimmten Breite</li>
+                    <li><span class="inline-code">min-width</span>: Regel gilt ab einer bestimmten Breite</li>
+                    <li>Prozentwerte helfen, damit Layouts nicht starr bleiben</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>

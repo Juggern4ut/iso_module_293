@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - Aufgabenblatt 13}
+\author{von Lukas Meier}
+\date{Unterricht vom 31.03.2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabenblatt: Responsive Grundlagen}
+
+\subsection*{Teil 1: Begriffe verstehen}
+Beantworte die folgenden Fragen kurz schriftlich:
+\begin{itemize}
+  \item Was bedeutet \emph{responsive} bei einer Webseite?
+  \item Wozu dient die Meta-Zeile \texttt{viewport} im \texttt{head}?
+  \item Warum sind fixe Pixelbreiten auf kleinen Geräten oft problematisch?
+\end{itemize}
+
+\subsection*{Teil 2: Media Queries lesen}
+Betrachte die folgende CSS-Regel:
+
+\begin{verbatim}
+@media (max-width: 700px) {
+  nav a {
+    display: block;
+  }
+}
+\end{verbatim}
+
+Bearbeite dazu die Fragen:
+\begin{itemize}
+  \item Wann gilt diese Regel?
+  \item Was verändert sich bei den Links im \texttt{nav}?
+  \item Für welche Geräte könnte diese Regel sinnvoll sein?
+\end{itemize}
+
+\subsection*{Teil 3: max-width und min-width}
+Erkläre den Unterschied zwischen:
+\begin{itemize}
+  \item \texttt{@media (max-width: 700px)}
+  \item \texttt{@media (min-width: 700px)}
+\end{itemize}
+
+Schreibe zu beiden Varianten je einen kurzen Beispielsatz in eigenen Worten.
+
+\subsection*{Teil 4: Prozentbreiten anwenden}
+Erstelle eine einfache HTML-Seite mit einem Container \texttt{wrapper} und zwei Bereichen:
+\begin{itemize}
+  \item \texttt{left}
+  \item \texttt{right}
+\end{itemize}
+
+Vorgaben:
+\begin{itemize}
+  \item Der Container soll z.\,B. \texttt{width: 90\%} haben.
+  \item Beide Bereiche sollen auf einem breiten Bildschirm nebeneinander stehen.
+  \item Beide Bereiche sollen ungefähr gleich breit sein.
+\end{itemize}
+
+\subsection*{Teil 5: Layout für kleine Bildschirme anpassen}
+Erweitere deine Lösung aus Teil 4 mit einer Media Query:
+\begin{itemize}
+  \item Bei kleiner Bildschirmbreite sollen \texttt{left} und \texttt{right} untereinander dargestellt werden.
+  \item Beide Bereiche sollen dann \texttt{width: 100\%} erhalten.
+\end{itemize}
+
+Teste dein Ergebnis, indem du das Browserfenster schmaler und breiter ziehst.
+
+\subsection*{Teil 6: Code ergänzen}
+Vervollständige den folgenden CSS-Code:
+
+\begin{verbatim}
+.card {
+  width: ______;
+  display: inline-block;
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: ______;
+    display: ______;
+  }
+}
+\end{verbatim}
+
+Ziel:
+\begin{itemize}
+  \item Auf grossen Bildschirmen soll die Karte nur einen Teil der Breite belegen.
+  \item Auf kleinen Bildschirmen soll sie die ganze Breite nutzen.
+\end{itemize}
+
+\subsection*{Teil 7: Best Practices reflektieren}
+Beurteile die folgenden Aussagen mit \glqq sinnvoll\grqq{} oder \glqq eher ungünstig\grqq{} und begründe kurz:
+\begin{itemize}
+  \item Ein Hauptbereich bekommt immer \texttt{width: 1200px}.
+  \item Buttons und Texte werden auf dem Handy zusätzlich getestet.
+  \item Ein Container bekommt \texttt{width: 90\%} und \texttt{margin: 0 auto}.
+  \item Das Layout wird nur auf einem grossen Monitor angeschaut.
+\end{itemize}
+
+\subsection*{Teil 8: Praxisaufgabe}
+Erstelle eine kleine Beispielseite zum Thema \glqq Mein Wochenplan\grqq{} oder \glqq Mein Lieblingsort\grqq{}.
+
+Anforderungen:
+\begin{itemize}
+  \item eine HTML-Datei und eine CSS-Datei
+  \item ein Container mit prozentualer Breite
+  \item mindestens zwei Inhaltsbereiche
+  \item mindestens eine Media Query mit \texttt{max-width} oder \texttt{min-width}
+  \item sichtbarer Unterschied zwischen schmalem und breitem Layout
+\end{itemize}
+
+\subsection*{Teil 9: Reflexion}
+Beantworte die folgenden Fragen kurz:
+\begin{itemize}
+  \item Was war heute bei Responsive Design neu für dich?
+  \item Was hat mit Media Queries bereits gut funktioniert?
+  \item Wo brauchst du noch Übung?
+\end{itemize}
+
+\end{document}
