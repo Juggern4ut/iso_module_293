@@ -48,13 +48,13 @@ textarea {
   box-sizing: border-box;
 }
 
-fieldset {
+.field {
   border: 1px solid #cbd5e1;
   border-radius: 10px;
   padding: 14px;
 }
 
-fieldset label {
+.field label {
   display: block;
   font-weight: 400;
   margin-top: 8px;
