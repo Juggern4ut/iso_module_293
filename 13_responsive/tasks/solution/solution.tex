@@ -1,0 +1,227 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\setlength{\parindent}{0pt}
+
+\title{Modul 293 - L\"osungsblatt 13}
+\author{von Lukas Meier}
+\date{Unterricht vom 31.03.2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{L\"osungsblatt: Responsive Grundlagen}
+
+\subsection*{Teil 1: Begriffe verstehen}
+\begin{itemize}
+  \item \textbf{Responsive} bedeutet, dass sich eine Webseite automatisch an verschiedene Bildschirmgr\"ossen anpasst (z.\,B. Handy, Tablet, Desktop).
+  \item Die Meta-Zeile \texttt{viewport} sorgt daf\"ur, dass die Seite auf mobilen Ger\"aten in der richtigen Breite und Skalierung dargestellt wird.
+  \item Fixe Pixelbreiten sind auf kleinen Ger\"aten problematisch, weil Inhalte dann zu breit werden, horizontal scrollen oder abgeschnitten wirken.
+\end{itemize}
+
+\subsection*{Teil 2: Media Queries lesen}
+Gegebene Regel:
+\begin{verbatim}
+@media (max-width: 700px) {
+  nav a {
+    display: block;
+  }
+}
+\end{verbatim}
+
+\begin{itemize}
+  \item Die Regel gilt, wenn die Viewport-Breite \textbf{700px oder kleiner} ist.
+  \item Die Links im \texttt{nav} werden als Blockelemente dargestellt und stehen dadurch untereinander.
+  \item Sinnvoll ist das z.\,B. f\"ur Smartphones oder schmale Tablet-Ansichten.
+\end{itemize}
+
+\subsection*{Teil 3: max-width und min-width}
+\begin{itemize}
+  \item \texttt{@media (max-width: 700px)}: Regel gilt bis maximal 700px (typisch f\"ur kleine Bildschirme).
+  \item \texttt{@media (min-width: 700px)}: Regel gilt ab 700px (typisch f\"ur gr\"ossere Bildschirme).
+\end{itemize}
+
+Beispiels\"atze:
+\begin{itemize}
+  \item \texttt{max-width}: \glqq Wenn das Fenster schmal ist, wird die Navigation untereinander angezeigt.\grqq{}
+  \item \texttt{min-width}: \glqq Wenn genug Platz vorhanden ist, stehen die Inhalte nebeneinander.\grqq{}
+\end{itemize}
+
+\subsection*{Teil 4: Prozentbreiten anwenden}
+M\"ogliche L\"osung:
+\begin{verbatim}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Teil 4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <section class="left">Linker Bereich</section>
+    <section class="right">Rechter Bereich</section>
+  </div>
+</body>
+</html>
+\end{verbatim}
+
+\begin{verbatim}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+.left,
+.right {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #999;
+}
+
+.right {
+  margin-left: 4%;
+}
+\end{verbatim}
+
+\subsection*{Teil 5: Layout f\"ur kleine Bildschirme anpassen}
+Erg\"anzung mit Media Query:
+\begin{verbatim}
+@media (max-width: 700px) {
+  .left,
+  .right {
+    width: 100%;
+    display: block;
+    margin-left: 0;
+  }
+
+  .right {
+    margin-top: 12px;
+  }
+}
+\end{verbatim}
+
+Ergebnis: Auf kleinen Bildschirmen werden die beiden Bereiche untereinander angezeigt.
+
+\subsection*{Teil 6: Code erg\"anzen}
+Eine passende Erg\"anzung ist:
+\begin{verbatim}
+.card {
+  width: 45%;
+  display: inline-block;
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: 100%;
+    display: block;
+  }
+}
+\end{verbatim}
+
+\subsection*{Teil 7: Best Practices reflektieren}
+\begin{itemize}
+  \item Ein Hauptbereich bekommt immer \texttt{width: 1200px}. \textbf{Eher ung\"unstig}, weil auf kleinen Ger\"aten oft horizontaler Scroll entsteht.
+  \item Buttons und Texte werden auf dem Handy zus\"atzlich getestet. \textbf{Sinnvoll}, weil Bedienbarkeit und Lesbarkeit mobil gepr\"uft werden.
+  \item Ein Container bekommt \texttt{width: 90\%} und \texttt{margin: 0 auto}. \textbf{Sinnvoll}, da die Breite flexibel bleibt und zentriert wird.
+  \item Das Layout wird nur auf einem grossen Monitor angeschaut. \textbf{Eher ung\"unstig}, weil mobile Darstellungen unbeachtet bleiben.
+\end{itemize}
+
+\subsection*{Teil 8: Praxisaufgabe (Beispiel \glqq Mein Wochenplan\grqq{})}
+\textbf{index.html}
+\begin{verbatim}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mein Wochenplan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mein Wochenplan</h1>
+    </header>
+
+    <main class="grid">
+      <section class="box">
+        <h2>Schule</h2>
+        <p>Montag bis Freitag: Unterricht und Projekte.</p>
+      </section>
+
+      <section class="box">
+        <h2>Freizeit</h2>
+        <p>Sport, Lesen und Zeit mit Freunden.</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+\end{verbatim}
+
+\textbf{styles.css}
+\begin{verbatim}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.grid {
+  font-size: 0;
+}
+
+.box {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  padding: 16px;
+  border: 1px solid #bbb;
+  background: #f7f7f7;
+}
+
+.box + .box {
+  margin-left: 4%;
+}
+
+@media (max-width: 700px) {
+  .box {
+    width: 100%;
+    display: block;
+  }
+
+  .box + .box {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}
+\end{verbatim}
+
+\subsection*{Teil 9: Reflexion (Beispielantworten)}
+\begin{itemize}
+  \item Neu war f\"ur mich, wie stark \texttt{max-width} und \texttt{min-width} das Layout steuern.
+  \item Gut funktioniert hat das Umschalten von nebeneinander auf untereinander mit einer Media Query.
+  \item Mehr \"Ubung brauche ich bei der Wahl sinnvoller Breakpoints und beim Testen auf verschiedenen Ger\"aten.
+\end{itemize}
+
+\end{document}
