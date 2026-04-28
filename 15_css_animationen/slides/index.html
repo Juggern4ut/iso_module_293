@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modul 293 - CSS-Animationen</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+        .inline-code {
+            font-family: "Consolas", "Monaco", monospace;
+            background-color: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 80%;
+        }
+
+        .small-text {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Modul 293</h2>
+                <hr />
+                <h3>CSS-Animationen</h3>
+                <p>Kurzer Ausblick auf das nächste Modul</p>
+            </section>
+
+            <section>
+                <h2>15 - CSS-Animationen</h2>
+                <hr />
+                <h3>Bewegung direkt mit CSS</h3>
+                <img style="width: 160px" src="assets/img/css_logo.png" alt="CSS Logo" />
+            </section>
+
+            <section>
+                <h2>Lernziele</h2>
+                <ul>
+                    <li>Verstehen, was CSS-Animationen grob sind</li>
+                    <li><span class="inline-code">transition</span> und <span class="inline-code">animation</span> unterscheiden</li>
+                    <li>Ein sehr einfaches <span class="inline-code">@keyframes</span>-Beispiel lesen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wozu Animationen?</h2>
+                <ul>
+                    <li>Elemente können weicher erscheinen, verschwinden oder sich bewegen</li>
+                    <li>Benutzer sehen schneller, was sich verändert</li>
+                    <li>Animationen sollten sparsam und klar eingesetzt werden</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Zwei Grundideen</h2>
+                <ul>
+                    <li><span class="inline-code">transition</span>: eine Änderung wird sanft animiert</li>
+                    <li><span class="inline-code">animation</span>: eine eigene Bewegungsfolge läuft automatisch ab</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Einfach mit transition</h2>
+                <pre>
+                    <code class="hljs css" data-trim data-line-numbers>
+                        button {
+                          background: steelblue;
+                          transition: background 0.3s ease;
+                        }
+
+                        button:hover {
+                          background: tomato;
+                        }
+                    </code>
+                </pre>
+                <p class="small-text">Beim Hover wechselt die Farbe nicht hart, sondern weich.</p>
+            </section>
+
+            <section>
+                <h2>Animation mit keyframes</h2>
+                <pre>
+                    <code class="hljs css" data-trim data-line-numbers>
+                        @keyframes schweben {
+                          from { transform: translateY(0); }
+                          to { transform: translateY(-10px); }
+                        }
+
+                        .box {
+                          animation: schweben 1s infinite alternate;
+                        }
+                    </code>
+                </pre>
+                <p class="small-text">Hier bewegt sich ein Element ständig leicht nach oben und unten.</p>
+            </section>
+
+            <section>
+                <h2>Wichtige Begriffe</h2>
+                <ul>
+                    <li><span class="inline-code">duration</span>: Wie lange etwas dauert</li>
+                    <li><span class="inline-code">delay</span>: Wann etwas startet</li>
+                    <li><span class="inline-code">ease</span>: Wie schnell oder langsam es sich bewegt</li>
+                    <li><span class="inline-code">infinite</span>: Wiederholt sich ohne Ende</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Merksätze</h2>
+                <ul>
+                    <li><span class="inline-code">transition</span> ist gut für Zustandswechsel</li>
+                    <li><span class="inline-code">animation</span> ist gut für eigene Abläufe mit <span class="inline-code">@keyframes</span></li>
+                    <li>Animationen sind ein Thema, das im nächsten Modul vertieft wird</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight, RevealNotes],
+        });
+    </script>
+</body>
+
+</html>
