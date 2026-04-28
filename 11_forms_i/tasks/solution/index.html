@@ -11,14 +11,9 @@
     <h1>Anmeldung HTML-Workshop</h1>
     <p>Bitte fülle das Formular vollständig aus.</p>
 
-    <form action="/kursanmeldung" method="post">
-      <label for="vorname">Vorname</label>
-      <input id="vorname" type="text" name="vorname" />
-
-      <label for="nachname">Nachname</label>
+    <form action="/anfrage" method="post">
+      <input id="vorname" type="text" placeholder="Bitte Vorname Eingeben" name="vorname" />
       <input id="nachname" type="text" name="nachname" />
-
-      <label for="alter">Alter</label>
       <input id="alter" type="number" name="alter" />
 
       <button type="submit">Anmeldung senden</button>
