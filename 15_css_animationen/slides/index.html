@@ -25,6 +25,36 @@
         .small-text {
             font-size: 0.8em;
         }
+
+        .button {
+            appearance: none;
+            border: none;
+            padding: 10px;
+            background-color: steelblue;
+        }
+
+        .button:hover{
+            background-color: tomato;
+            color: #fff;
+        }
+
+        .transition{
+            transition: 400ms;
+        }
+
+        @keyframes schweben {
+          from { top: 0; background-color: steelblue; }
+          to { top: 20px; background-color: tomato; }
+        }
+
+        .box {
+            width: 200px;
+            background-color: steelblue;
+            height: 50px;
+            margin: 0 auto;
+            position: relative;
+          animation: schweben 1s infinite alternate;
+        }
     </style>
 </head>
 
@@ -35,7 +65,7 @@
                 <h2>Modul 293</h2>
                 <hr />
                 <h3>CSS-Animationen</h3>
-                <p>Kurzer Ausblick auf das nächste Modul</p>
+                <p>Kurzer Ausblick</p>
             </section>
 
             <section>
@@ -77,7 +107,7 @@
                     <code class="hljs css" data-trim data-line-numbers>
                         button {
                           background: steelblue;
-                          transition: background 0.3s ease;
+                          transition: 400ms;
                         }
 
                         button:hover {
@@ -86,6 +116,10 @@
                     </code>
                 </pre>
                 <p class="small-text">Beim Hover wechselt die Farbe nicht hart, sondern weich.</p>
+                <div>
+                    <button class="button">Ohne Transition</button>
+                    <button class="button transition">Mit Transition</button>
+                </div>
             </section>
 
             <section>
@@ -93,8 +127,14 @@
                 <pre>
                     <code class="hljs css" data-trim data-line-numbers>
                         @keyframes schweben {
-                          from { transform: translateY(0); }
-                          to { transform: translateY(-10px); }
+                            from { 
+                                top: 0; 
+                                background-color: steelblue; 
+                            }
+                            to { 
+                                top: 20px; 
+                                background-color: tomato; 
+                            }
                         }
 
                         .box {
@@ -103,6 +143,8 @@
                     </code>
                 </pre>
                 <p class="small-text">Hier bewegt sich ein Element ständig leicht nach oben und unten.</p>
+
+                <div class="box"></div>
             </section>
 
             <section>
@@ -120,7 +162,6 @@
                 <ul>
                     <li><span class="inline-code">transition</span> ist gut für Zustandswechsel</li>
                     <li><span class="inline-code">animation</span> ist gut für eigene Abläufe mit <span class="inline-code">@keyframes</span></li>
-                    <li>Animationen sind ein Thema, das im nächsten Modul vertieft wird</li>
                 </ul>
             </section>
         </div>
